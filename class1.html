@@ -213,9 +213,16 @@
             <img src="images/jsbinscript.png">
           </section>
         <!-- Selectors-->
+      
+        
         <section>
           <h3>jQuery Selectors</h3>
           <p>One of the most important things we can do with jQuery is select HTML elements from existing websites. In jQuery, we do this through <span class = "green">selectors</span></p>
+          <p>jQuery selectors are much like CSS selectors. 
+          Instead of finding to an html element to apply styles, you can find an html element to modify, remove or replace.</p>
+        </section>
+        <section>
+          <h3>jQuery Element Selectors</h3>
           <p class = "fragment"> jQuery selectors let you get elements by: </p>
           <ul>
             <li class = "fragment"><span class="green">Element name</span> (div, p)
@@ -511,6 +518,7 @@
             <section>
               <h3>jQuery Actions</h3>
               <div class = "left-align">
+                <p>Now that we have talked about selectors, and the jQuery shorthand ($), we can tell you the foundation of all jQuery: <span class="green">$(selector).action();</span>                    
                 <p class = "fragment">jQuery has hundreds of actions that can be performed on any element</p>
                 <p class = "fragment">All the actions are methods</p>
                 <p class = "fragment">As methods they are called with dot notation</p>
@@ -662,7 +670,83 @@
                     * Hiding and revealing elements
                     * Fading elements in and out
                   -->
+                  
+                   <section>
+                      <h3>Fading Elements Out</h3>
+                      
+                      <div class="fragment">
+                        We can fade out an element by calling the action <span class="green">fadeOut</span> on it.
+                                             <pre><code contenteditable class = "javascript">
+  var img = $('#mainpic');
+  img.fadeOut();
+                                                       </code></pre>
 
+                        </div>
+                    
+                    </section>        
+
+                    <section>
+                        <h3>Fading Elements Out On Click</h3>
+                        <p>We will talk in detail about responding to user actions with jQuery next week.</p>
+                        <p class="fragment">However, as a preview, open up the following JSBin: <a href="http://jsbin.com/ubeney/3/edit" target="_blank">http://jsbin.com/ubeney/3/edit</a></p>
+                        <p class="fragment">
+                          We can fade out an element in response to a user clicking on it by adding the following jQuery:
+                                               <pre class="fragment"><code contenteditable class = "javascript">
+    $('#mainpic').click(
+      function() {
+        $(this).fadeOut();
+      }
+    );</code></pre>
+                          </p>
+
+                      </section>
+                      
+                      <section>
+                          <h3>Showing and Hiding Elements</h3>
+
+                          <div>
+                            We can hide an element by calling the action <span class="green">hide</span> on it. 
+                                                                       <pre><code contenteditable class = "javascript">
+  $('#mainpic').click(
+    function() {
+      $(this).hide();
+    }
+  );</code></pre>
+                            </div>
+                            <div>Unlike <span class="green">fadeOut()</span>, which happens over time, <span class="green">hide()</span> happens instantly.</div>
+
+                        </section>
+                        
+                         <section>
+                              <h3>Showing and Hiding Elements</h3>
+
+                              <div>
+Open the following JSBin: <a href="http://jsbin.com/owarum/1/edit" target="_blank">http://jsbin.com/owarum/1/edit</a>
+</div>
+<div>Add in the following jQuery to make the buttons "Show" and "Hide" respond appropriately.                                                                           <pre><code contenteditable class = "javascript">
+      $('#show').click(
+        function() {
+          $('#mainpic').show();
+        }
+      );
+      
+      $('#hide').click(
+        function() {
+          $('#mainpic').hide();
+        }
+      );</code></pre>
+                                </div>
+                            </section>              
+            <section>
+              <h3>Homework!</h3>
+              Reading:
+              <ul>
+                <li><a href="http://learn.jquery.com/javascript-101/getting-started/">JavaScript 101: Getting Started</a></li>
+                <li><a href="http://learn.jquery.com/about-jquery/how-jquery-works/">How jQuery Works</a></li>
+                <li><a href="http://learn.jquery.com/using-jquery-core/selecting-elements/">Selecting Elements</a></li>
+                </ul>
+
+            </section>
 
             <!-- -->
             <section>
