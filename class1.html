@@ -626,6 +626,35 @@
                       </code></pre>
                     </div>
                   </section>
+                   <section>
+                      <h3>Updating CSS: A Better Way</h3>
+                      <div class = "fragment">
+                        Rather than directly updating the CSS as we saw on the previous slide, it's better to modify styles on your page by toggling existing CSS classes on and off.
+                      <div class = "fragment">
+                        This way, we are not adding CSS via an inline style, which is messy.
+                      </div>
+                      <div class="fragment">We are also preserving the separation of Content (HTML) and formatting (CSS) when we take this approach.</div>
+                    
+                    </section>
+                   <section>
+                      <h3>Updating CSS: A Better Way</h3>
+                      
+                      <div class="fragment">If we've previously defined a CSS selector to set a size...
+                        <pre><code contenteditable class = "javascript">
+ .shrink {
+   width: 200px;
+ }                                  </code></pre>
+                        
+                        </div>
+                    <div class="fragment">
+                      We can leverage that class, and trigger the change by simply adding the class via jQuery:
+                      <pre><code contenteditable class = "javascript">
+ var img = $('#mainpic');
+ img.addClass('shrink');
+                                </code></pre>
+                      </div>
+                    
+                    </section>
 
                   <!-- 
                     * Hiding and revealing elements
