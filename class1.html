@@ -227,7 +227,7 @@
           <h3>jQuery Element Selectors</h3>
           <p>Let's practice using jQuery's element selector. </p>
           <ul>
-            <li>Open the following JSBin: <a href="http://jsbin.com/ezuhoh/4/edit" target="_blank">http://jsbin.com/ezuhoh/4/edit</a></li>
+            <li>Open the following JSBin: <a href="http://jsbin.com/ezuhoh/7/edit" target="_blank">http://jsbin.com/ezuhoh/7/edit</a></li>
             <br>
             <li>Let's select all the paragraphs by entering the following code in the JavaScript window. 
             </li>
@@ -354,20 +354,38 @@
                 <!-- jQuery Class Selector Exercise -->
                   <section>
                     <h3>Using jQuery's Class Selector</h3>
-                    <p>Let's practice using jQuery's class selector. </p>
                     <ul>
-                      <li>Re-open the following JSBin: <a href="http://jsbin.com/ezuhoh/4/edit" target="_blank">http://jsbin.com/ezuhoh/4/edit</a></li>
-                      <br>
+                      <li>Re-open the following JSBin: <a href="http://jsbin.com/ezuhoh/50" target="_blank">http://jsbin.com/ezuhoh/7/edit</a></li>
                       <li>Let's select all the images with the class <span class="green">picture</span> by entering the following code in the JavaScript window. 
                       </li>
                       <pre><code contenteditable class = "javascript"> var images = jQuery(".picture");
 </code></pre>
-
+   <li>Next, we'll use jQuery's <span class="green">addClass()</span> to add the class <span class="green">pic-border</span> to all the matched elements.
+     <ul><li>The CSS for this JSBin has previously defined the class <span class="green">pic-border</span> to apply a 5px black border</li></ul> 
+    </li>
+    <pre><code contenteditable class = "javascript"> var images = jQuery(".picture");
+ images.addClass('pic-border');</code></pre>
+           <li>Don't forget to click the <span class="green">Run with JS</span> button to see the changes take effect.</li>
                     </ul>
                   </section>
 
                 <!-- jQuery Id Selector Exercise -->
-          
+                  <section>
+                    <h3>Using jQuery's Id Selector</h3>
+                    <ul>
+                      <li>Re-open the following JSBin: <a href="http://jsbin.com/ezuhoh/50" target="_blank">http://jsbin.com/ezuhoh/7/edit</a></li>
+                      <li>Let's select the images with the id <span class="green">mainpic</span> by entering the following code in the JavaScript window. 
+                      </li>
+                      <pre><code contenteditable class = "javascript"> var mainpic = jQuery("#mainpic");
+</code></pre>
+   <li>Next, we'll use jQuery's <span class="green">addClass()</span> to add the class <span class="green">float-right</span> to the matched element.
+     <ul><li>The CSS for this JSBin has previously defined the id selector <span class="green">float-left</span> to make any matched element float right.</li></ul> 
+    </li>
+    <pre><code contenteditable class = "javascript"> var mainpic = jQuery("#mainpic");
+ mainpic.addClass('float-right');</code></pre>
+           <li>Don't forget to click the <span class="green">Run with JS</span> button to see the changes take effect.</li>
+                    </ul>
+                  </section>
               <!-- Functions-->
               <section>
                 <h3>Functions</h3>
