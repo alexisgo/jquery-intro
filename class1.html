@@ -95,6 +95,40 @@
           </ul>
         </section>
         
+        <!-- History-->
+        <section>
+          <h3>History of JavaScript</h3>
+          <ul>
+            <li class = "fragment">Developed by Brendan Eich of Netscape in 1995</li>
+            <li class = "fragment">Standardized in 1997</li>
+            <li class = "fragment">Java -- Actually JavaScript has nothing to do with the language Java. Java was just the cool kid in town at the time</li>
+            <li class = "fragment">Script -- Instructions that a computer can run one line at a time</li>
+          </ul>
+        </section>
+        
+        <!-- History-->
+        <section>
+          <h3>History of JavaScript</h3>
+          <ul>
+            <li class = "fragment">"AJAX" -- a way to communicate to servers was created in 2005</li>
+            <li class = "fragment">jQuery -- a super-popular JavaScript Library 2006</li>
+            <li class = "fragment">Node.js -- a way for JavaScript to perform back end functions in 2010</li>
+            <li class = "fragment">2012 -- spec for JavaScript "nearly" finished</li>
+          </ul>
+        </section>
+        
+        <!--What does JavaScript do -->
+        <section>
+          <h3>What does JavaScript do?</h3>
+          <ul>
+            <li><a href = "http://leandrovieira.com/projects/jquery/lightbox/" target = '_blank'>Image Galleries and Lightboxes</a></li>
+            <li><a href = "https://www.google.com/doodles/30th-anniversary-of-pac-man" target = '_blank'>Games and all sorts of Google Doodles</a></li>
+            <li><a href = "http://www.girldevelopit.com/materials" target = '_blank'>Interactions, like show/hide and accordians</a></li>
+            <li><a href = "http://www.girldevelopit.com/classes" target = '_blank'>Retrieving data from other websites (through APIs)</a></li>
+            <li>All sorts of awesomeness, including this slideshow!</li>
+          </ul>
+        </section>
+        
         <section>
           <h3>jQuery: A Brief History</h3>
           <ul>
@@ -182,32 +216,248 @@
           <p>One of the most important things we can do with jQuery is select HTML elements from existing websites. In jQuery, we do this through <span class = "green">selectors</span></p>
           <p class = "fragment"> jQuery selectors let you get elements by: </p>
           <ul>
-            <li class = "fragment">Element name (div, p)
-            <pre><code contenteditable class = "javascript">
-      var divs = $("div"); // All divs on page
-            </code></pre>
+            <li class = "fragment"><span class="green">Element name</span> (div, p)
+            <pre><code contenteditable class = "javascript"> var divs = jQuery("div");</code></pre>
             </li>
           </ul>
         </section>
         
+        <!-- jQuery Element Selector Exercise -->
+        <section>
+          <h3>jQuery Element Selectors</h3>
+          <p>Let's practice using jQuery's element selector. </p>
+          <ul>
+            <li>Open the following JSBin: <a href="http://jsbin.com/ezuhoh/4/edit" target="_blank">http://jsbin.com/ezuhoh/4/edit</a></li>
+            <br>
+            <li>Let's select all the paragraphs by entering the following code in the JavaScript window. 
+            </li>
+            <pre><code contenteditable class = "javascript"> var paragraphs = jQuery("p");</code></pre>
+            <li>After storing all the paragraphs in the variable <span class="green">paragraphs</span>, we can log all the text of these paragraphs to the console:</li>
+                <pre><code contenteditable class = "javascript"> var paragraphs = jQuery("p");
+ console.log(paragraphs.text());</code></pre>
+              
+          </ul>
+        </section>
+        
+        
+
+        
+      
+          <section>
+            <h3>Important JavaScript Vocabulary</h3>
+            <p>Before we go any further, it's important to review a few basic programming terms that are relevant to jQuery.
+            <ul>
+              <li>Statements</li>
+              <li>Variables</li>
+              <li>Functions</li>
+            </ul>
+          </section>
+      
+          <!--Statements -->
+          <section>
+            <h3>Statements</h3>
+            <ul>
+              <li>Each line in JavaScript is an instruction, aka a <span class="green">statement</span></li>
+              <li>When the browser reads it, it "executes the script"</li>
+              <br>
+              <li>Try typing the following into JSBin, and then clicking <span class="green">"Run with JS"</span>. 
+                <ul><li>Make sure you've clicked the <span class="green">Console</span> button so you can see the results logged to the console.</li></ul>
+              </li>
+            </ul>
+            <pre><code contenteditable class ="javascript">
+              console.log('Hello');
+            </code></pre>
+            <img src="images/consolelog.png">
+          </section>
+
+          <!-- Variables-->
+          <section>
+            <h3>Variables</h3>
+            <div class = "fragment left-align">
+              <p>Variables hold content</p>
+              <p>Words, numbers, true/false, basically any kind of content</p>
+            </div>
+            <div class = "fragment">
+              <p>Declare a variable (Give it a name)</p>
+              <pre><code contenteditable class ="javascript">
+                var bananas;
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              <p>Initialize variable (Give it a value)</p>
+              <pre><code contenteditable class ="javascript">
+                bananas = 5;
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Variables</h3>
+            <div class = "fragment">
+              <p>Declare and initialize at the same time!</p>
+              <pre><code contenteditable class ="javascript">
+                var bananas = 5;
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              <p>Change value of variable</p>
+              <pre><code contenteditable class ="javascript">
+                bananas = 4;
+              </code></pre>
+              <p>(I ate a banana)</p>
+            </div>
+          </section>
+          
+          <section>
+            <h3>Naming rules</h3>
+            <div class = "fragment">
+              <p>Begin with a letter, _, or $</p>
+              <p>Contain letters, numbers, _ and $</p>
+              <pre><code contenteditable class ="javascript">
+                var hello;
+                var _hello;
+                var $hello;
+                var hello2;
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              <p>Names are case sensitive</p>
+              <pre><code contenteditable class ="javascript">
+                var hello;
+                var Hello;
+                var heLLO;
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Back to jQuery Selectors!</h3>
+          </section>
+          
           <section>
             <h3>jQuery Selectors</h3>
-            <p>One of the most important things we can do with jQuery is select HTML elements from existing websites. In jQuery, we do this through <span class = "green">selectors</span></p>
-            <p class = "fragment"> jQuery selectors <em class="blue">also</em> let you get elements by: </p>
+            <p>jQuery <span class = "green">selectors</span> allow us to select HTML elements from existing websites.</p>
+            <p>In addition to selecting all elements of a given type, jQuery selectors <em class="blue">also</em> let you get elements by: </p>
             <ul>
-              <li class = "fragment"><span class="green">ID name</span> (#mainpicture, #results)
-              <pre><code contenteditable class = "javascript">
-  var img = $("#mainpicture"); //img with id mainpicture
+              <li class = "fragment"><span class="green">ID name</span> (#mainpic, #results)
+              <pre><code contenteditable class = "javascript"> var img = jQuery("#mainpic"); //img with id mainpic
               </code></pre>
               </li>
               <li class = "fragment"><span class="green">Class name</span> (.result, .picture)
-              <pre><code contenteditable class = "javascript">
-  var images = $(".picture"); //All images with class picture 
+              <pre><code contenteditable class = "javascript">//All images with class picture 
+ var images = jQuery(".picture"); 
               </code></pre> 
               </li>
             </ul>
           </section>
-      
+
+                <!-- jQuery Class Selector Exercise -->
+                  <section>
+                    <h3>Using jQuery's Class Selector</h3>
+                    <p>Let's practice using jQuery's class selector. </p>
+                    <ul>
+                      <li>Re-open the following JSBin: <a href="http://jsbin.com/ezuhoh/4/edit" target="_blank">http://jsbin.com/ezuhoh/4/edit</a></li>
+                      <br>
+                      <li>Let's select all the images with the class <span class="green">picture</span> by entering the following code in the JavaScript window. 
+                      </li>
+                      <pre><code contenteditable class = "javascript"> var images = jQuery(".picture");
+</code></pre>
+
+                    </ul>
+                  </section>
+
+                <!-- jQuery Id Selector Exercise -->
+          
+              <!-- Functions-->
+              <section>
+                <h3>Functions</h3>
+                <p class = "fragment">Functions are re-usable collections of statements</p>
+                <div class = "fragment">
+                  Declare a function
+               <pre><code contenteditable class ="javascript">
+                  function sayHi(){
+                    console.log('Hi!');
+                  }
+                </code></pre>
+                </div>
+                <div class = "fragment">
+                  Call the function
+               <pre><code contenteditable class ="javascript">
+                  sayHi();
+                </code></pre>
+                </div>
+              </section>
+
+              <!-- Functions cont.-->
+              <section>
+                <h3>Arguments</h3>
+                <p class = "fragment">Functions can take named arguments</p>
+                <div class = "fragment">
+               <pre><code contenteditable class ="javascript">
+                  function sayHi(name){
+                    console.log('Hi' + name + '!');
+                  }
+                  sayHi('Mitch, the dinosaur');
+                  sayHi('Harold, the hippo');
+
+                  var name = 'Pip, the mouse';
+                  sayHi(name);
+                </code></pre>
+                </div>
+              </section>
+
+              <!-- Functions cont.-->
+              <section>
+                <h3>Arguments</h3>
+                <p class = "fragment">Functions can take MULTIPLE named arguments</p>
+                <div class = "fragment">
+               <pre><code contenteditable class ="javascript">
+                  function addNumbers(num1, num2){
+                    var result = num1 + num2;
+                    console.log(result);
+                  }
+
+                  addNumbers(5, 6);
+
+                  var number1 = 12;
+                  var number2 = 15;
+                  addNumbers(number1, number2);
+                </code></pre>
+                </div>
+              </section>
+
+              <!-- Functions cont.-->
+              <section>
+                <h3>Return values</h3>
+                <p class = "fragment">Functions can return a value</p>
+                <div class = "fragment">
+               <pre><code contenteditable class ="javascript">
+          function addNumbers(num1, num2){
+            var result = num1 + num2;
+            return result; //Anything after this line won't be read
+          }
+          var sum  = addNumbers(5, 6);
+                </code></pre>
+                </div>
+              </section>
+          
+        <!-- Background info
+        to do:
+        - functions
+        - objects (MAYBE)
+        - comments
+        -->
+          
+          <!--
+          
+          the jQuery function and its shorthand, $
+          -->
+
+        <!-- 
+          * Modifying HTML elements
+          * Hiding and revealing elements
+          * Fading elements in and out
+        -->
         
         <!-- Actions-->
         <section>
@@ -305,12 +555,6 @@
           </div>
         </section>
         
-        <!-- Exercise-->
-        <section>
-          <h3>Let's Develop It!</h3>
-          <p>Try to convert last week's DOM interaction into jQuery.</p>
-          <p>Don't forget to include jQuery in your html head!</p>
-        </section>
         
         <!-- Document Ready-->
         <section>
@@ -410,17 +654,7 @@
           </div>
         </section>
         
-        <!-- Exercise-->
-        <section>
-          <h3>Let's Develop It</h3>
-          <ul>
-            <li>Add a div to your html that is 100px by 200px</li>
-            <li>Bind events to the div in your javascript file</li>
-            <li>Don't forget to surround your events with document ready</li>
-            <li>Try to change size, color, or event the html inside the div</li>
-            <li>Bonus: change all the onclick events to jQuery click events</li>
-          </ul>
-        </section>
+
         
         <!-- HTML forms-->
         <section>
@@ -502,18 +736,7 @@
           </div>
         </section>
         
-        <!-- Exercise-->
-        <section>
-          <h3>Let's Develop It</h3>
-          <ul>
-            <li>Choose one (or all!) of your functions made so far</li>
-            <li>i.e. lifetime supply, favorite things, or my friends</li>
-            <li>Create a form to send dynamic data to the function when you click the button</li>
-            <li>Don't forget to add parameters to your existing functions!</p>
-            <li>This is a little harder than all the other exercises.</li>
-            <li>Be creative!</li>
-          </ul>
-        </section>
+
         <!-- -->
         <section>
           <h2>Questions?</h2>
