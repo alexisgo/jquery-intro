@@ -39,8 +39,8 @@
 			  <!-- Opening slide -->
         <section>
           <img src = "images/gdi_logo_badge.png" width="50%">
-          <h3>Beginning Javascript</h3>
-          <h4>Class 3</h4>
+          <h3>Intro to jQuery</h3>
+          <h4>Class 1</h4>
         </section>
         
         <!-- Welcome-->
@@ -58,17 +58,6 @@
           </div>
         </section>
         
-        <!-- What is a library-->
-        <section>
-          <h3>What is a library?</h3>
-          <ul>
-            <li class = "fragment">Software libraries hold functions (not books!)</li>
-            <li class = "fragment">When you include a library, you can use all the functions in that library</li>
-            <li class = "fragment">That means: <span class = "pink">you get to take advantage of other people's experience!</li>
-            <li class = "fragment">And... <span class ="blue">Save time!</span></li>
-          </ul>
-        </section>
-        
         <!-- What is jQuery-->
         <section>
           <h3>What is jQuery?</h3>
@@ -81,6 +70,20 @@
             <li class = "fragment">JavaScript effects and animations</li>
           </ul>
         </section>
+        
+        <!-- What is a library-->
+         <section>
+           <h3>What is a library?</h3>
+           <ul>
+             <li class = "fragment">Software libraries hold <span class="green">functions</span></li>
+              <ul>
+                <li class="fragment">functions are like a collection of helpful code you want to run again & again</li>
+              </ul>
+             <li class = "fragment">When you include a library, you can use all the functions in that library</li>
+             <li class = "fragment">That means: <span class = "pink">you get to take advantage of other people's experience!</li>
+             <li class = "fragment">And... <span class ="blue">Save time!</span></li>
+           </ul>
+         </section>
         
         <section>
           <h3>Why use jQuery?</h3>
@@ -129,6 +132,50 @@
           </div>
         </section>
         
+        <!-- online editor: jsbin -->
+          <section>
+            <h3>JSBin</h3>
+            <p>
+            Today, we'll be using the online editor <a  href="http://jsbin.com" target="_blank">JSBin</a>. 
+            </p>
+            <ul>
+              <li><a  href="http://jsbin.com" target="_blank">JSBin</a> allows us to create simple web pages from anywhere.</li>
+              <li>Every time you create a new JSBin, it creates a new URL for that "file".</li> 
+              <ul>
+                  <li>You can return to your work, or share it with others,  by sharing this unique URL. 
+                  </li>
+                </ul>
+                <li>You can also lock a revision of a JSBin by clicking <span class="green">Share</span> and then <span class="green">Lock Revision</span></li>
+              </ul>
+            <img src="images/jsbin.png" alt="screenshot of online web development and code editor jsbin">
+          </section>
+          
+          <!-- including jquery lib -->
+          <section>
+            <h3>Including jQuery</h3>
+            <p>
+            Let's begin by adding the latest version of jQuery to a new <a href="http://jsbin.com" target="_blank">JSBin</a>. JSBin has support for including many JavaScript libraries, including jQuery. 
+            </p>
+            <p>We begin by clicking the <span class="green">Add Library</span> button.
+            </p>
+            <img src="images/jsbinaddlib.png" alt="Adding jquery library to a jsbin">
+
+          </section>
+          <section>
+            <h3>Including jQuery</h3>
+            <div>
+              We'll use the latest version of the jQuery library. 
+            </div>            
+            <img src="images/addjquery.png" alt="Adding jquery library to a jsbin">
+          </section>
+          
+          <section>
+            <h3>Including jQuery</h3>
+            <p>    
+               Clicking Add Library > jQuery latest will result in the jQuery library being linked to in a <span style="font-family:Courier;">script</span> element in the <span style="font-family:Courier;">head</span> section of our JSBin's HTML.
+            </p>
+            <img src="images/jsbinscript.png">
+          </section>
         <!-- Selectors-->
         <section>
           <h3>jQuery Selectors</h3>
@@ -140,18 +187,26 @@
       var divs = $("div"); // All divs on page
             </code></pre>
             </li>
-            <li class = "fragment">ID name (#mainpicture, #results)
-            <pre><code contenteditable class = "javascript">
-var img = $("#mainpicture"); //img with id mainpicture
-            </code></pre>
-            </li>
-            <li class = "fragment">Class name (.result, .picture)
-            <pre><code contenteditable class = "javascript">
-var images = $(".picture"); //All images with class picture 
-            </code></pre> 
-            </li>
           </ul>
         </section>
+        
+          <section>
+            <h3>jQuery Selectors</h3>
+            <p>One of the most important things we can do with jQuery is select HTML elements from existing websites. In jQuery, we do this through <span class = "green">selectors</span></p>
+            <p class = "fragment"> jQuery selectors <em class="blue">also</em> let you get elements by: </p>
+            <ul>
+              <li class = "fragment"><span class="green">ID name</span> (#mainpicture, #results)
+              <pre><code contenteditable class = "javascript">
+  var img = $("#mainpicture"); //img with id mainpicture
+              </code></pre>
+              </li>
+              <li class = "fragment"><span class="green">Class name</span> (.result, .picture)
+              <pre><code contenteditable class = "javascript">
+  var images = $(".picture"); //All images with class picture 
+              </code></pre> 
+              </li>
+            </ul>
+          </section>
       
         
         <!-- Actions-->
