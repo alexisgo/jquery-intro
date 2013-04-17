@@ -40,7 +40,7 @@
         <section>
           <img src = "images/gdi_logo_badge.png" width="50%">
           <h3>Intro to jQuery</h3>
-          <h4>Class 1</h4>
+          <h4>Class 2</h4>
         </section>
         
         <!-- Welcome-->
@@ -58,8 +58,223 @@
           </div>
         </section>
 
-        <!-- to do: add segue, review-->
+        <!-- Review: Statements-->
+          <section>
+            <h3>Review: JavaScript Vocabulary</h3>
+            <ol>
+              <li class="orange">Statements</li>
+                <ul>
+                  <li>Each line in JavaScript is an instruction, aka a <span class="green">statement</span></li>
+                  <li>When the browser reads it, it "executes the script"</li>
+                  <li>All statements end with a semicolon ;</li>
+                  <pre><code contenteditable class ="javascript">
+  // each of these lines is a statement
+  console.log('Hello');
+  var foo = "testing testing";
+  callSomeFunction();
+                  </code></pre>
+                  
+                </ul>
+              <li>Variables</li>
+              <li>Functions</li>
+            </ol>
+          </section>
+          
+           <!-- Review: Variables-->
+          <section>
+            <h3>Review: Variables</h3>
+            <ol>
+              <li>Statements</li>
+              <li class="orange">Variables</li>
+                <ul>
+                  <li>Variables give us a place to store values</li>
+                  <li>We declare them with the keyword <span class="green">var</span> and assign them with the = sign.</li>
+                                  <pre><code contenteditable class ="javascript">
+  var bananas = 5;
+                                  </code></pre>
+              </ul>
+              <li>Functions</li>
+            </ol>
+          </section>     
+          
+        <!-- Review: Functions-->
+      <section>
+        <h3>Review: Functions</h3>
+        <ol>
+          <li>Statements</li>
+          <li>Variables</li>
+          <li class="orange">Functions</li>
+            <ul>
+              <li>Functions are re-usable collections of statements.</li>
+              <li>A way to package up and easily reuse chunks of code</li>
+              <pre><code contenteditable class ="javascript">
+ // declare the function
+ function sayHi(){
+   console.log('Hi!');
+ }
+ 
+ // call the function
+ sayHi();
+               </code></pre>
+              
+            </ul>
+        </ol>
+      </section>
+           
+         <!-- Review: Actions-->
+          <section>
+            <h3>Review: jQuery Actions</h3>
+            <div class = "left-align">
+              <p>Now that we have talked about selectors, and the jQuery shorthand ($), we can tell you the foundation of all jQuery: <span class="green">$(selector).action();</span>                    
+              <p class = "fragment">jQuery has hundreds of actions that can be performed on any element</p>
+              <p class = "fragment">All the actions are methods</p>
+              <p class = "fragment">As methods they are called with dot notation</p>
+            </div>
+            <div class = "fragment">
+              Action format
+              <pre><code contenteditable class = "javascript">
+          $(selector).action();     
+              </code></pre>
+            </div>
+          </section>
 
+
+          <!-- 
+            * Modifying HTML elements
+          -->
+
+          <!-- html values-->
+          <section>
+            <h3>Updating values and html</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "html">
+    &lt;div class = "results">Boo!&lt;/div>         
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              Get and set html value
+              <pre><code contenteditable class = "javascript">
+    var div = $('#results');
+    div.html();
+    div.html('New html!');
+              </code></pre>
+            </div>
+          </section>
+
+          <!-- Append and prepend-->
+          <section>
+            <h3>Append and Prepend</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "html">
+    &lt;div class = "results">Boo!&lt;/div>         
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              Append html
+              <pre><code contenteditable class = "javascript">
+      var div = $('#results');
+      div.append('Additional html');
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              Prepend html
+              <pre><code contenteditable class = "javascript">
+      var div = $('#results');
+      div.prepend('Additional html (on top)');
+              </code></pre>
+            </div>
+          </section>
+
+          <section>
+            <h3>Creating new element</h3>
+            <div class = "fragment">
+              <pre><code contenteditable class = "javascript">
+      var newDiv = $('&lt;div>&lt;/div>');
+              </code></pre>
+            </div>
+            <div class = "fragment">
+              Seriously. That's it!
+            </div>
+          </section>
+
+
+          <!-- Document Ready-->
+          <section>
+            <h3>Document Ready</h3>
+            <div class = "left-align">
+            <p>Webpages take time to load</p>
+            <p class = "fragment">Almost always, you don't want the JavaScript to be called until the page is loaded</p>
+            </div>
+            <div class = "fragment">
+              Document ready is a method called when the page is loaded
+              <pre><code contenteditable class = "javascript">
+          $(document).ready(function(){
+
+          });
+              </code></pre>
+            </div>
+            <div class = "fragment left-align">
+              <span class = "yellow">Note:</span> The function() inside is an "anonymous function". It has no name, but still performs like a function.
+            </div>
+          </section>
+          
+                <!-- Attributes and css-->
+                <section>
+                  <h3>Updating attributes and css</h3>
+                  <div class = "fragment">
+                    <pre><code contenteditable class = "html">
+          &lt;img id="mainpicture" src="http://girldevelopit.com/assets/pink-logo.png">         
+                    </code></pre>
+                  </div>
+                  <div class = "fragment">
+                    Attribute get and set
+                    <pre><code contenteditable class = "javascript">
+          var img = $('#mainpicture');
+          img.attr('src');
+          img.attr('src', 'http://girldevelopit.com/assets/pink-logo.png');
+                    </code></pre>
+                  </div>
+                  <div class = "fragment">
+                    CSS property get and set
+                    <pre><code contenteditable class = "javascript">
+          var img = $('#mainpicture');
+          img.css('width');
+          img.css('width', '200px');
+                    </code></pre>
+                  </div>
+                </section>
+                 <section>
+                    <h3>Updating CSS: A Better Way</h3>
+                    <div class = "fragment">
+                      Rather than directly updating the CSS as we saw on the previous slide, it's better to modify styles on your page by toggling existing CSS classes on and off.
+                    <div class = "fragment">
+                      This way, we are not adding CSS via an inline style, which is messy.
+                    </div>
+                    <div class="fragment">We are also preserving the separation of Content (HTML) and formatting (CSS) when we take this approach.</div>
+                  
+                  </section>
+                 <section>
+                    <h3>Updating CSS: A Better Way</h3>
+                    
+                    <div class="fragment">If we've previously defined a CSS selector to set a size...
+                      <pre><code contenteditable class = "javascript">
+.shrink {
+ width: 200px;
+}                                  </code></pre>
+                      
+                      </div>
+                  <div class="fragment">
+                    We can leverage that class, and trigger the change by simply adding the class via jQuery:
+                    <pre><code contenteditable class = "javascript">
+var img = $('#mainpic');
+img.addClass('shrink');
+                              </code></pre>
+                    </div>
+                  
+                  </section>
+
+              
+                          
 
                 <!-- HTML Events-->
                 <section>
@@ -118,6 +333,79 @@
                   </code></pre>
                   </div>
                 </section>
+
+                  <!-- 
+                    * Hiding and revealing elements
+                    * Fading elements in and out
+                  -->
+
+                   <section>
+                      <h3>Fading Elements Out</h3>
+
+                      <div class="fragment">
+                        We can fade out an element by calling the action <span class="green">fadeOut</span> on it.
+                                             <pre><code contenteditable class = "javascript">
+  var img = $('#mainpic');
+  img.fadeOut();
+                                                       </code></pre>
+
+                        </div>
+
+                    </section>        
+
+                    <section>
+                        <h3>Fading Elements Out On Click</h3>
+                        <p>We will talk in detail about responding to user actions with jQuery next week.</p>
+                        <p class="fragment">However, as a preview, open up the following JSBin: <a href="http://jsbin.com/ubeney/3/edit" target="_blank">http://jsbin.com/ubeney/3/edit</a></p>
+                        <p class="fragment">
+                          We can fade out an element in response to a user clicking on it by adding the following jQuery:
+                                               <pre class="fragment"><code contenteditable class = "javascript">
+    $('#mainpic').click(
+      function() {
+        $(this).fadeOut();
+      }
+    );</code></pre>
+                          </p>
+
+                      </section>
+
+                      <section>
+                          <h3>Showing and Hiding Elements</h3>
+
+                          <div>
+                            We can hide an element by calling the action <span class="green">hide</span> on it. 
+                                                                       <pre><code contenteditable class = "javascript">
+  $('#mainpic').click(
+    function() {
+      $(this).hide();
+    }
+  );</code></pre>
+                            </div>
+                            <div>Unlike <span class="green">fadeOut()</span>, which happens over time, <span class="green">hide()</span> happens instantly.</div>
+
+                        </section>
+
+                         <section>
+                              <h3>Showing and Hiding Elements</h3>
+
+                              <div>
+  Open the following JSBin: <a href="http://jsbin.com/owarum/1/edit" target="_blank">http://jsbin.com/owarum/1/edit</a>
+  </div>
+  <div>Add in the following jQuery to make the buttons "Show" and "Hide" respond appropriately.                                                                           <pre><code contenteditable class = "javascript">
+      $('#show').click(
+        function() {
+          $('#mainpic').show();
+        }
+      );
+
+      $('#hide').click(
+        function() {
+          $('#mainpic').hide();
+        }
+      );</code></pre>
+                                </div>
+                            </section>
+
 
                 <section>
                   <h3>Combining events</h3>
