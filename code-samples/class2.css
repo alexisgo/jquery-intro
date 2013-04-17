@@ -1,0 +1,31 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.header  {
+  /*to overcome default browser margin, and make the background colors of the header stretch all the way to the edge of the window: */
+  margin: -8px;
+
+  padding: 10px;
+  background-color:darkblue;
+  color:white;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.picture {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.float-right {
+  float: right;
+}
+
+.pic-border {
+  border: 5px solid black; 
+}
