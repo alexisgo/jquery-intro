@@ -359,7 +359,7 @@ $(document).ready(
 
                 <section>
                   <h3>Handling event examples</h3>
-                  <p>Try out this code at: <a href="http://jsbin.com/azekal/1/edit" target="_blank">http://jsbin.com/azekal/1/edit</a></p>
+                  <p>Try out this code at: <a href="http://jsbin.com/azekal/3/edit" target="_blank">http://jsbin.com/azekal/3/edit</a></p>
                   <div>
                     <pre><code contenteditable class = "javascript">
   $('.box').mouseenter(function(){
@@ -434,6 +434,17 @@ $(document).ready(
                                   </div>
                                 </section>
 
+                                   <section>
+                                      <h3>Changing an Image In Response to a Click</h3>
+                                      <div class="left-align">
+                                        Let's combine jQuery's event handling with the <span class="orange">attr()</span> action. 
+                                      </div>
+                                                                                                                        <div class="left-align">
+Open up this JSBin as a starting point: <a href="http://jsbin.com/iyonet/2/edit" target=
+"_blank">http://jsbin.com/iyonet/2/edit</a>                                                                                                                            
+                                   </div>
+                                    </section>                                  
+
                                  <section>
                                     <h3>Changing an Image In Response to a Click</h3>
                                     <div class="left-align">
@@ -451,6 +462,7 @@ $(document).ready(
                                           </code></pre>                                    
                                           
                                   </section>     
+
                                   
                                   <section>
                                     <h3>Adding Event Handling</h3>
@@ -502,10 +514,53 @@ $(document).ready(
                                     </section>
                                     
                                 <!-- add in if/else statements -->    
-                                    
+                                      <section>
+                                        <h3>Swapping Images In Response to a Button Click</h3>
+                                      <p>As of right now, we can only swap the image <em>once</em>. </p>
+                                      <p>It would be nice to add some code that would allow the image to flip back and forth.</p>
+                                      <p>To do that, we need a way of knowing which image is currently there, so we know which one to change it to.</P>
+                                        <p>We can accomplish this through the <span class="green">attr()</span>'s getter and some <span class="green">if/else</span> statements.<p>
+                                      </section>
+                                      
+                                      
+                                       <section>
+                                          <h3>Swapping Images In Response to a Button Click</h3>
+                                          <p>In the swapImages() function, let's find out what the current value of the src attribute is, by adding this line in orange:<p>
+   <pre><code contenteditable class ="javascript">                                            
+function swapImages() {
+  var img = $('#kitten');
+
+  // get the value of the current src attribute  
+  <span class="orange">var imgattr = img.attr('src');</span>
+}  
+</pre></code>
+                                        </section>
+                                      
+                                        <section>
+                                            <h3>Adding If/Else</h3>
+                                            <p>We can use if/else statements to swap images, depending on which image is currently visible.<p>
+     <pre><code contenteditable class ="javascript">                                            
+  function swapImages() {
+    var img = $('#kitten');
+
+    // get the value of the current src attribute  
+    var imgattr = img.attr('src');
+    
+    var kitten1 = "http://placekitten.com/200/200";
+    var kitten2 = "http://placekitten.com/50/300";
+
+    if (imgattr === kitten1) {
+      img.attr('src', kitten2);
+    }
+    else {
+      img.attr('src', kitten1);
+    }
+  }  
+  </pre></code>
+                                          </section>
                                   <section>
                                     <h3>Swapping Images In Response to a Button Click</h3>
-                                  See this code in action at: <a href="http://jsbin.com/uzeyow/1/edit" target="_blank">http://jsbin.com/uzeyow/1/edit</a>
+                                  See the completed code in action at: <a href="http://jsbin.com/uzeyow/2/edit" target="_blank">http://jsbin.com/uzeyow/2/edit</a>
                                   </section>
                                   
                                   
@@ -625,15 +680,16 @@ $(document).ready(
                                </div>
                              </section>                                
                                 
-                                   
-                                
                                    <section>
                                       <h3>Changing an Image In Response to a Click</h3>
-                                            <p>Running this jQuery:</p>
+                                            <p>Running <a href="http://jsbin.com/ohalen/1/edit" target="_blank">this jQuery code</a>:</p>
                                             <pre><code contenteditable class = "javascript">
-                                             </code></pre>                                    
-                                            <p>Will update our HTML to:</p>
-
+ $('.hi').css('border', '5px solid black');                                             </code></pre>                                    
+                                            <p>Will update our HTML to have an <strong><em>inline style</em></strong>:</p>
+                                            <pre><code>
+  &lt;div class="hi" style="border: 5px solid black;"&gt;hi&lt;/div&gt;
+                                             </code></pre>
+                                             <p>This is a bit messy, and violates the principle of separating HTML and CSS. But, there is a better way!</p>
                                     </section>
                                  <section>
                                     <h3>Updating CSS: A Better Way</h3>
@@ -666,13 +722,7 @@ $(document).ready(
                                   </section>
                         
 
-                <!-- -->                  
-                <section>
-                  <h3>jQuery's animate() action</h3>
-                  <pre><code>
-  .animate( properties [, duration ] [, easing ] [, complete ] )
-                    </code></pre>
-                </section>
+
                 <!-- Combining Events -->            
 
                 <section>
@@ -702,41 +752,144 @@ $(document).ready(
                   <h3>JavaScript Objects</h3>
                   <div class="left-align">
                     <p>The last slide made use of a JavaScript object in order to bind multiple events to the same element.</p>
-                    
+                    <p class="fragment">What is an object?</p>
                   </div>
                 </section>
                 
-                 <!-- 
-                    * Modifying HTML elements
-                  -->
-
-                  <!-- html values-->
+                
+                  <!-- Objects-->
                   <section>
-                    <h3>Updating values and html</h3>
-                    <div class = "fragment">
-                      <pre><code contenteditable class = "html">
-            &lt;div class = "results">Boo!&lt;/div>         
-                      </code></pre>
-                    </div>
-                    <div class = "fragment">
-                      Get and set html value
+                    <h3>Objects</h3>
+                    <p>Objects are a data type that let us store a collection of properties and methods.</p>
+                    <p>The simplest object is just the empty curly braces {}<p>
+                      <p>In more typical objects, the curly braces {} will contain one or more property/value pairs, separated by commas.</p>
+                                        <pre><code contenteditable class = "javascript">
+  var objectName = { 
+    propertyName: propertyValue,
+    propertyName: propertyValue
+  };
+                      </pre></code>
+
+                  </section>
+
+                   <section>
+                      <h3>Objects</h3>
+                      <p>Objects are a data type that let us store a collection of properties and methods.</p>
                       <pre><code contenteditable class = "javascript">
-            var div = $('#results');
-            div.html();
-            div.html('New html!');
+    var objectName = { 
+      propertyName: propertyValue,
+      propertyName: propertyValue,
+      propertyName: propertyValue
+    };
+                      </code></pre>
+                      <div class = "fragment">
+                        <pre><code contenteditable class = "javascript">
+    var charlie = {
+      age: 8,
+      name: "Charlie Brown",
+      likes: ["baseball", "The little red-haired girl"],
+      pet: "Snoopy"
+    };
+                      </code></pre>
+                      </div>
+                    </section>
+                  <section>
+                    <h3>Objects -- returning values</h3>
+                    <p>Access values of "properties" using "dot notation":</p>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+  var charlie = {
+    age: 8,
+    name: "Charlie Brown",
+    likes: ["baseball", "The little red-haired girl"],
+    pet: "Snoopy"
+  };
+                </code></pre>
+                    </div> 
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+  var pet = charlie.pet;
                       </code></pre>
                     </div>
                   </section>
 
                   <section>
-                    <h3>Adding a new element</h3>
-                    <div class = "fragment">To add a new element, select the element you want to add the new element inside, and then call <span class="green">add('element')</span>. For example, this will add a paragraph inside the first li element on the page:
+                    <h3>Objects -- returning values</h3>
+                    <div class = "fragment">
+                      Or using "bracket notation" (like arrays):
                       <pre><code contenteditable class = "javascript">
- $('li').add('p').css('background-color', 'red');
+  var name = charlie['name'];
                       </code></pre>
                     </div>
-                    <div class="fragment">Try this out at: <a href=""></a></div>
-                    <div class="fragment">Read more at: <a href="http://api.jquery.com/add/" target="_blank">http://api.jquery.com/add/</a>
+                    <div class = "fragment">
+                      Non-existent properties will return undefined:
+                      <pre><code contenteditable class = "javascript">
+  var gender = charlie.gender
+                      </code></pre>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3>Objects -- changing values</h3>
+                    <p>Use dot or bracket notation with the assignment operator to change objects.</p>
+                    <div class = "fragment">
+                    Change existing properties:
+                    <pre><code contenteditable class = "javascript">
+                    charlie.name = "Chuck";
+                    </code></pre>
+                    </div>
+                    <div class = "fragment">
+                      Or add new properties:
+                      <pre><code contenteditable class = "javascript">
+                    charlie.gender = "male";
+                      </code></pre>
+                    </div>
+                    <div class ="fragment">
+                    You can also delete properties:
+                    <pre><code contenteditable class = "javascript">
+                    delete charlie.gender;
+                    </code></pre>
+                    </div>
+                  </section>
+                
+                   <!-- Combining Events -->            
+
+                    <section>
+                      <h3>Combining events</h3>
+                      <p>If you want multiple events to happen on the same element, you should use the bind() action</p>
+                      <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+      $('.box').bind( 
+        {
+            click: function() {
+              $(this).css('background-color', 'green')
+            },
+            mouseenter: function() {
+              $(this).css('background-color', 'purple')
+            },
+            mouseleave: function(){
+              $(this).css('background-color', 'orange')
+            }
+        }
+      );
+                      </code></pre>
+                      </div>
+                    </section>
+                 <!-- 
+                    * Modifying HTML elements
+                  -->
+
+                  <!-- html values-->
+
+                  <section>
+                    <h3>Adding a new element</h3>
+                    <div class = "fragment">To add a new element, select the element you want to add the new element inside, and then call <span class="green">append('element')</span>. For example, this will add a paragraph inside the first li element on the page:
+                      <pre><code contenteditable class = "javascript">
+ $('li').append('&lt;p&gt;new paragraph&lt;/p&gt;');
+                      </code></pre>
+                    </div>
+                    <div class="fragment">Try this out at: <a href="http://jsbin.com/exasen/1/edit" target="_blank">http://jsbin.com/exasen/1/edit</a></div>
+                    <div class="fragment">Read more at: <a href="http://api.jquery.com/append/" target="_blank">http://api.jquery.com/append/</a>
                   </section>
 
                    <!-- Append and prepend-->
@@ -750,15 +903,15 @@ $(document).ready(
                       <div class = "fragment">
                         Append html
                         <pre><code contenteditable class = "javascript">
-                var div = $('#results');
-                div.append('Additional html');
+  var div = $('#results');
+  div.append('&lt;p&gt;Additional html&lt;/p&gt;');
                         </code></pre>
                       </div>
                       <div class = "fragment">
                         Prepend html
                         <pre><code contenteditable class = "javascript">
-                var div = $('#results');
-                div.prepend('Additional html (on top)');
+  var div = $('#results');
+  div.append('&lt;p&gt;Additional html (on top)&lt;/p&gt;');
                         </code></pre>
                       </div>
                     </section>
