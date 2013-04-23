@@ -434,6 +434,17 @@ $(document).ready(
                                   </div>
                                 </section>
 
+                                   <section>
+                                      <h3>Changing an Image In Response to a Click</h3>
+                                      <div class="left-align">
+                                        Let's combine jQuery's event handling with the <span class="orange">attr()</span> action. 
+                                      </div>
+                                                                                                                        <div class="left-align">
+Open up this JSBin as a starting point: <a href="http://jsbin.com/iyonet/2/edit" target=
+"_blank">http://jsbin.com/iyonet/2/edit</a>                                                                                                                            
+                                   </div>
+                                    </section>                                  
+
                                  <section>
                                     <h3>Changing an Image In Response to a Click</h3>
                                     <div class="left-align">
@@ -451,6 +462,7 @@ $(document).ready(
                                           </code></pre>                                    
                                           
                                   </section>     
+
                                   
                                   <section>
                                     <h3>Adding Event Handling</h3>
@@ -502,10 +514,53 @@ $(document).ready(
                                     </section>
                                     
                                 <!-- add in if/else statements -->    
-                                    
+                                      <section>
+                                        <h3>Swapping Images In Response to a Button Click</h3>
+                                      <p>As of right now, we can only swap the image <em>once</em>. </p>
+                                      <p>It would be nice to add some code that would allow the image to flip back and forth.</p>
+                                      <p>To do that, we need a way of knowing which image is currently there, so we know which one to change it to.</P>
+                                        <p>We can accomplish this through the <span class="green">attr()</span>'s getter and some <span class="green">if/else</span> statements.<p>
+                                      </section>
+                                      
+                                      
+                                       <section>
+                                          <h3>Swapping Images In Response to a Button Click</h3>
+                                          <p>In the swapImages() function, let's find out what the current value of the src attribute is, by adding this line in orange:<p>
+   <pre><code contenteditable class ="javascript">                                            
+function swapImages() {
+  var img = $('#kitten');
+
+  // get the value of the current src attribute  
+  <span class="orange">var imgattr = img.attr('src');</span>
+}  
+</pre></code>
+                                        </section>
+                                      
+                                        <section>
+                                            <h3>Adding If/Else</h3>
+                                            <p>We can use if/else statements to swap images, depending on which image is currently visible.<p>
+     <pre><code contenteditable class ="javascript">                                            
+  function swapImages() {
+    var img = $('#kitten');
+
+    // get the value of the current src attribute  
+    var imgattr = img.attr('src');
+    
+    var kitten1 = "http://placekitten.com/200/200";
+    var kitten2 = "http://placekitten.com/50/300";
+
+    if (imgattr === kitten1) {
+      img.attr('src', kitten2);
+    }
+    else {
+      img.attr('src', kitten1);
+    }
+  }  
+  </pre></code>
+                                          </section>
                                   <section>
                                     <h3>Swapping Images In Response to a Button Click</h3>
-                                  See this code in action at: <a href="http://jsbin.com/uzeyow/1/edit" target="_blank">http://jsbin.com/uzeyow/1/edit</a>
+                                  See the completed code in action at: <a href="http://jsbin.com/uzeyow/2/edit" target="_blank">http://jsbin.com/uzeyow/2/edit</a>
                                   </section>
                                   
                                   
@@ -625,15 +680,16 @@ $(document).ready(
                                </div>
                              </section>                                
                                 
-                                   
-                                
                                    <section>
                                       <h3>Changing an Image In Response to a Click</h3>
-                                            <p>Running this jQuery:</p>
+                                            <p>Running <a href="http://jsbin.com/ohalen/1/edit" target="_blank">this jQuery code</a>:</p>
                                             <pre><code contenteditable class = "javascript">
-                                             </code></pre>                                    
-                                            <p>Will update our HTML to:</p>
-
+ $('.hi').css('border', '5px solid black');                                             </code></pre>                                    
+                                            <p>Will update our HTML to have an <strong><em>inline style</em></strong>:</p>
+                                            <pre><code>
+  &lt;div class="hi" style="border: 5px solid black;"&gt;hi&lt;/div&gt;
+                                             </code></pre>
+                                             <p>This is a bit messy, and violates the principle of separating HTML and CSS. But, there is a better way!</p>
                                     </section>
                                  <section>
                                     <h3>Updating CSS: A Better Way</h3>
