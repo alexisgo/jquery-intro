@@ -131,7 +131,7 @@
           $('selector').action();     
               </code></pre>
             </div>
-            <p>You can find a comprehensive list of ALL available jQuery actions at: <a href="http://api.jquery.com/">http://api.jquery.com/</a>.</p>
+            <p>You can find a comprehensive list of ALL available jQuery actions at: <a href="http://api.jquery.com/" target="_blank">http://api.jquery.com/</a>.</p>
           </section>
 
 
@@ -140,10 +140,10 @@
           
           <!-- Using Cloud9 -->
           <section>
-            <h3>Setting Up jQuery</h3>
-            <p>Last week, we used the online editor JSBin, which is an online editor that
+            <h3>Setting Up jQuery on Cloud9</h3>
+            <p>Last week, we used <a href="http://jsbin.com" target="_blank">JSBin</a>, which is an online editor that
               is great for experimenting with jQuery.</p>
-            <p>Today, we will be using Cloud9, which is a more realistic development environment.</p>
+            <p>Today, we will also use Cloud9, which is a more realistic development environment.</p>
             <p>If you haven't already, please create an account at <a href="http://c9.io">http://c9.io</a></p>
           </section>
           
@@ -167,9 +167,8 @@
   - How to use callbacks to write custom code in response to user actions (click, scroll, keypress, etc)
          
   - Example callbacks:
-    -- on click: fade in, fade out
-    -- on click: hide, show
     -- upload a photo
+for class 3:
     -- progress bar while photo loads?
     
     -- if time: something with jquery UI (are progress bars in jquery UI?)     
@@ -189,41 +188,25 @@
                     <li class = "fragment"><a href = "http://api.jquery.com/category/events/" target = "_blank">Other events</a></li>
                   </ul>
                 </section>
+                       <!-- Document Ready-->
+                        <section>
+                          <h3>Document Ready</h3>
+                          <div class = "left-align">
+                          <p>One of the most common events we'll want to pay attention to is when the webpage has loaded</p>  
+                          <p>Webpages take time to load</p>
+                          <p class = "fragment">Almost always, you don't want the JavaScript to be called until the page is loaded</p>
+                          </div>
+                        </section>
 
-                <section>
-                  <h3>Handling events</h3>
-              <pre><code contenteditable class = "javascript">
-  $(selector).mouseenter(function(){
-    //code when the mouse enters
-  })
-              </code></pre>
-                  <div class = "fragment">
-              <pre><code contenteditable class = "javascript">
-  $('.box').mouseenter(function(){
-    $(this).css('background-color', 'purple')
-  })
-              </code></pre>
-                  </div>
-                  <div class = "fragment left-align">
-                    <div>The <span class = "green">$(this)</span> selector in jQuery refers to the element on whom the action was called.</div>
-                    <div>Here <span class = "green">$(this)</span> is the <span class = "blue">$('.box')</span> that the mouse entered.
-                  </div>
-                </section>
-                
-                
-                   <!-- Document Ready-->
-                    <section>
+                      <section>
                       <h3>Document Ready</h3>
-                      <div class = "left-align">
-                      <p>Webpages take time to load</p>
-                      <p class = "fragment">Almost always, you don't want the JavaScript to be called until the page is loaded</p>
-                      </div>
                       <div class = "fragment">
                         Document ready is a method called when the page is loaded
                         <pre><code contenteditable class = "javascript">
-  $(document).ready(function(){
-
-  });
+  $(document).ready(
+     function() {
+     }
+  );
                         </code></pre>
                       </div>
                       <div class = "fragment left-align">
@@ -231,46 +214,110 @@
                       </div>
                     </section>
 
-                      
-                                    <!-- 
-                                      * Fading elements in and out
-                                    -->
+                       <section>
+                        <h3>Document Ready</h3>
+                        <div class = "left-align">
+                          Because we typically want to manipulate our pages with jQuery <em>after</em> the website has finished loading, all of our jQuery code will live inside this Document ready action.
+                        </div>
+                                              <pre><code contenteditable class = "javascript">
+  $(document).ready(
+     function() {
+    
+  // all our jQuery for the page will live inside here
+  
+     }
+  );
+                                              </code></pre>
+                        
+                      </section>
 
+                             <!-- Fading elements in and out-->
                                      <section>
-                                        <h3>Fading Elements In</h3>
-
+                                        <h3>Example: Fading Elements In</h3>
                                         <div>
                                           <ul>
-                                            <li  class="fragment">We can fade in an element by calling the action <span class="green">fadeIn()</span> on it.</li>
+                                            <li  class="fragment">We can fade in an element as soon as the page loads by combining <span class="green"><Document ready>$(document).ready()</span> with the action <span class="green">fadeIn()</span></li>
+                                            <ul>
                                             <li class="fragment">NOTE that for <span class="green">fadeIn()</span> to work, the element must originally be <strong>hidden</strong> by having <span class="orange">display:none;</span> set in its CSS.</li>
-                                            <li class="fragment">Let's fade in an elements as soon as the page loads.</li>
                                             </ul>
+                                                                         </ul>
                                           
                                <pre class="fragment"><code contenteditable class = "javascript">
-$(document).ready(function(){
- var img = $('#mainpic');
- img.fadeIn();
-});</code></pre>
+$(document).ready(
+   function(){
+     var img = $('#mainpic');
+     img.fadeIn();
+   }
+);</code></pre>
 
                                           </div>
-                                          <div class="fragment">Read about all the options available to <span class="orange">fadeIn()</span> here: <a href="http://api.jquery.com/fadeIn/">http://api.jquery.com/fadeIn/</a>
-                                          </div>
-                                      </section>        
+                                      </section> 
+                                      
+                                       <section>
+                                          <h3>Example: Fading Elements In</h3>
+                                          <div>
+                                            <ul>
+                                              <li  class="fragment">We can fade in an element as soon as the page loads by combining Document ready with the action <span class="green">fadeIn()</span></li>
+                                              <li class="fragment">See this in action at: <a href="http://jsbin.com/efugoh/1/edit" target="_blank">http://jsbin.com/efugoh/1/edit</a>
+                                                                           </ul>
 
-                                      <section>
-                                          <h3>Fading Elements Out On Click</h3>
-                                          <p class="fragment">Open up the following JSBin: <a href="http://jsbin.com/ubeney/3/edit" target="_blank">http://jsbin.com/ubeney/3/edit</a></p>
-                                          <p class="fragment">
-                                            We can fade out an element in response to a user clicking on it by adding the following jQuery:
-                                                                 <pre class="fragment"><code contenteditable class = "javascript">
-                      $('#mainpic').click(
-                        function() {
-                          $(this).fadeOut();
-                        }
-                      );</code></pre>
-                                            </p>
+                                 <pre class="fragment"><code contenteditable class = "javascript">
+  $(document).ready(
+     function() { 
+       var img = $('#mainpic');
+       img.fadeIn();
+     }
+  );</code></pre>
 
-                                        </section>                
+                                            </div>
+                                            <div class="fragment">Read about all the options available to <span class="orange">fadeIn()</span> here: <a href="http://api.jquery.com/fadeIn/">http://api.jquery.com/fadeIn/</a>
+                                            </div>
+                                        </section>                                             
+
+                                                                             <section>
+                                                                                <h3>Example: Fading Elements In</h3>
+                                                                                <div>
+                                                                                  <ul>
+                                                                                    <li  class="fragment">We can fade in the image over 2 seconds instead of the default (1 second), by specifying how long the <span class="green">fadeIn()</span> should last in microseconds.</li>
+                                                                                    <li class="fragment">We pass that number as an argument to <span class="green">fadeIn()</span></li>
+
+                                                                       <pre class="fragment"><code contenteditable class = "javascript">
+  $(document).ready(
+     function() { 
+       var img = $('#mainpic');
+       img.fadeIn(2000);
+     }
+  );</code></pre>
+                                        <li class="fragment">See this in action at: <a href="http://jsbin.com/efugoh/2/edit" target="_blank">http://jsbin.com/efugoh/2/edit</a></li>
+                                                                     </ul>
+
+                                                                                  </div>
+                                                                              </section>
+                                                                              
+
+
+                                                   <section>
+                                                      <h3>Handling Other events</h3>
+                                                  <pre><code contenteditable class = "javascript">
+  $(selector).mouseenter(function(){
+    //code when the mouse enters
+  })
+                                                  </code></pre>
+                                                      <div class = "fragment">
+                                                  <pre><code contenteditable class = "javascript">
+  $('.box').mouseenter(function(){
+    $(this).css('background-color', 'purple')
+  })
+                                                  </code></pre>
+                                                      </div>
+                                                      <div class = "fragment left-align">
+                                                        <div>The <span class = "green">$(this)</span> selector in jQuery refers to the element on whom the action was called.</div>
+                                                        <div>Here <span class = "green">$(this)</span> is the <span class = "blue">$('.box')</span> that the mouse entered.
+                                                      </div>
+                                                    </section>
+
+
+       
 
                 <section>
                   <h3>Handling event examples</h3>
@@ -416,10 +463,114 @@ $(document).ready(function(){
                                         </div>
                                     </section>
                                     
+                                <!-- add in if/else statements -->    
+                                    
                                   <section>
                                     <h3>Swapping Images In Response to a Button Click</h3>
                                   See this code in action at: <a href="http://jsbin.com/uzeyow/1/edit" target="_blank">http://jsbin.com/uzeyow/1/edit</a>
                                   </section>
+                                  
+                                  
+                                          <!-- If statement-->
+                                          <section>
+                                            <h3>The if statement</h3>
+                                            <p>Javascript can run through code based on conditions</p>
+                                            <div class = "fragment">
+                                            <pre><code contenteditable class ="javascript">
+                                            if (condition here){
+                                              // statement to execute
+                                            }
+                                  </code></pre>
+                                            </div>
+                                            <div class = "fragment">
+                                  <pre><code contenteditable class ="javascript">
+                                            var bananas = 1;
+                                            if (bananas < 2){
+                                              console.log("You should buy more bananas!")
+                                            }
+                                  </code></pre>
+                                          </div>
+                                          <div class = "fragment">
+                                          Note: you can write comments that only you, not the browser reads
+                                          <pre><code contenteditable class ="javascript">
+                                              // comment on one line
+                                              /* comment on 
+                                                multiple lines
+                                                */
+                                          </code></pre>
+                                          </div>
+                                          </section>
+
+                                          <!-- Comparison-->
+                                          <section>
+                                            <h3>Comparisons</h3>
+                                            <table>
+                                              <tr class = "fragment"><td> === </td><td> Equality </td></tr>
+                                              <tr class = "fragment"><td> !== </td><td> Inequality </td></tr>
+                                              <tr class = "fragment"><td> > </td><td> Greater than </td></tr>
+                                              <tr class = "fragment"><td> >= </td><td> Greater than or equal to </td></tr>
+                                              <tr class = "fragment"><td> < </td><td> Less than </td></tr>
+                                              <tr class = "fragment"><td> <= </td><td> Less than or equal to </td></tr>
+                                            </table>
+                                            <p class = "fragment green"> Don't confuse = (assign a value) <br/>with === (compare a value)</p>
+                                          </section>
+
+                                          <!-- Logic-->
+                                          <section>
+                                            <h3>Logic</h3>
+                                            <table>
+                                              <tr class = "fragment"><td> && </td><td> AND </td></tr>
+                                              <tr class = "fragment"><td> || </td><td> OR </td></tr>
+                                              <tr class = "fragment"><td> ! </td><td> NOT </td></tr>
+                                            </table>
+                                            <div class = "fragment"> 
+                                              <pre><code contenteditable class ="javascript">
+                                          var bananas = 5;
+                                          var oranges = 2;
+                                          if (bananas > 3 && oranges > 3){
+                                            console.log('Eat fruit!');
+                                          }
+                                          if (bananas < 2 || oranges < 2){
+                                            console.log('Buy fruit!');
+                                          }
+                                          if (!(bananas >= 0)){
+                                            console.log('How do you have negative bananas?');
+                                          }
+                                              </code></pre>
+                                            </div>
+                                          </section>
+
+                                          <!-- If/else-->
+                                          <section>
+                                            <h3>If/Else Statement</h3>
+                                            <p>You can use else to perform an alternative action if the "if" fails</p>
+                                            <pre><code contenteditable class ="javascript">
+                                            var bananas = 5;
+                                            if (bananas > 3){
+                                              console.log('Eat a banana!');
+                                            } else {
+                                              console.log('Buy a banana!');
+                                            }
+                                            </code></pre>
+                                          </section>
+
+                                          <section>
+                                            <h3>If/Else Statement</h3>
+                                            <p>You can use else if to have multiple choices</p>
+                                            <pre><code contenteditable class ="javascript">
+                                  var age = 20;
+                                  if (age >= 35) {
+                                    console.log('You can vote AND hold any place in government!');
+                                  } else if (age >= 25) {
+                                    console.log('You can vote AND run for the Senate!');
+                                  } else if (age >= 18) {
+                                    console.log('You can vote!');
+                                  } else {
+                                    console.log('You have no voice in government (yet)!');
+                                  }
+                                            </code></pre>
+                                          </section>      
+                                  
                                                              
                              <!-- the css() action -->
                              <section>
@@ -498,23 +649,32 @@ $(document).ready(function(){
                   <p>If you want multiple events to happen on the same element, you should use the bind() action</p>
                   <div class = "fragment">
                   <pre><code contenteditable class = "javascript">
-              $('.box').bind({
-                click: function() {
-                  $(this).css('background-color', 'green')
-                },
-                mouseenter: function() {
-                  $(this).css('background-color', 'purple')
-                },
-                mouseleave: function(){
-                  $(this).css('background-color', 'orange')
-                }
-              });
+  $('.box').bind( 
+    {
+        click: function() {
+          $(this).css('background-color', 'green')
+        },
+        mouseenter: function() {
+          $(this).css('background-color', 'purple')
+        },
+        mouseleave: function(){
+          $(this).css('background-color', 'orange')
+        }
+    }
+  );
                   </code></pre>
                   </div>
                 </section>
 
-
-
+                <!-- talk about objects now -->
+                <section>
+                  <h3>JavaScript Objects</h3>
+                  <div class="left-align">
+                    <p>The last slide made use of a JavaScript object in order to bind multiple events to the same element.</p>
+                    
+                  </div>
+                </section>
+                
                  <!-- 
                     * Modifying HTML elements
                   -->
@@ -538,15 +698,14 @@ $(document).ready(function(){
                   </section>
 
                   <section>
-                    <h3>Creating new element</h3>
-                    <div class = "fragment">
+                    <h3>Adding a new element</h3>
+                    <div class = "fragment">To add a new element, select the element you want to add the new element inside, and then call <span class="green">add('element')</span>. For example, this will add a paragraph inside the first li element on the page:
                       <pre><code contenteditable class = "javascript">
-              var newDiv = $('&lt;div>&lt;/div>');
+ $('li').add('p').css('background-color', 'red');
                       </code></pre>
                     </div>
-                    <div class = "fragment">
-                      Seriously. That's it!
-                    </div>
+                    <div class="fragment">Try this out at: <a href=""></a></div>
+                    <div class="fragment">Read more at: <a href="http://api.jquery.com/add/" target="_blank">http://api.jquery.com/add/</a>
                   </section>
 
                    <!-- Append and prepend-->
