@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Intro to jQuery, Class 3 ~ Girl Develop IT</title>
+
+		<meta name="description" content="This is the Intro to jQuery course slides for a class first taught in NYC by Alexis Goldstein. Material based on original material for the Girl Develop It Core Intro Javascript course, which included contributions by Sara Chipps, Pamela Fox, Alexis Goldstein, Izzy Johnston and Leo Newball.
+
+    The course is meant to be taught in 3 two-hour sections. Each of the slides and practice files are customizable according to the needs of a given class or audience.">
+		<meta name="author" content="Girl Develop It">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="reveal/css/reveal.css">
+		<link rel="stylesheet" href="reveal/css/theme/gdidefault.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<!-- light editor<link rel="stylesheet" href="lib/css/light.css">-->
+		<!-- dark editor--><link rel="stylesheet" href="reveal/lib/css/dark.css">
+
+		<!-- If use the PDF print sheet so students can print slides-->
+		
+		<link rel="stylesheet" href="reveal/css/print/pdf.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			  <!-- Opening slide -->
+        <section>
+          <img src = "images/gdi_logo_badge.png" width="50%">
+          <h3>Intro to jQuery</h3>
+          <h4>Class 2</h4>
+        </section>
+        
+        <!-- Welcome-->
+        <section>
+          <h3>Welcome!</h3>
+          <div class = "left-align">
+          <p>Girl Develop It is here to provide affordable and accessible programs to learn software through mentorship and hands-on instruction.</p>
+          <p class ="green">Some "rules"</p>
+          <ul>
+            <li>We are here for you!</li>
+            <li>Every question is important</li>
+            <li>Help each other</li>
+            <li>Have fun</li>
+          </ul>
+          </div>
+        </section>
+
+        <!-- Review: Statements-->
+          <section>
+            <h3>Review: JavaScript Vocabulary</h3>
+            <ol>
+              <li class="orange">Statements</li>
+                <ul>
+                  <li>Each line in JavaScript is an instruction, aka a <span class="green">statement</span></li>
+                  <li>When the browser reads it, it "executes the script"</li>
+                  <li>All statements end with a semicolon ;</li>
+                  <pre><code contenteditable class ="javascript">
+  // each of these lines is a statement
+  console.log('Hello');
+  var foo = "testing testing";
+  callSomeFunction();
+                  </code></pre>
+                  
+                </ul>
+              <li>Variables</li>
+              <li>Functions</li>
+            </ol>
+          </section>
+          
+           <!-- Review: Variables-->
+          <section>
+            <h3>Review: Variables</h3>
+            <ol>
+              <li>Statements</li>
+              <li class="orange">Variables</li>
+                <ul>
+                  <li>Variables give us a place to store values</li>
+                  <li>We declare them with the keyword <span class="green">var</span> and assign them with the = sign.</li>
+                                  <pre><code contenteditable class ="javascript">
+  var bananas = 5;
+                                  </code></pre>
+              </ul>
+              <li>Functions</li>
+            </ol>
+          </section>     
+          
+        <!-- Review: Functions-->
+      <section>
+        <h3>Review: Functions</h3>
+        <ol>
+          <li>Statements</li>
+          <li>Variables</li>
+          <li class="orange">Functions</li>
+            <ul>
+              <li>Functions are re-usable collections of statements.</li>
+              <li>A way to package up and easily reuse chunks of code</li>
+              <pre><code contenteditable class ="javascript">
+ // declare the function
+ function sayHi(){
+   console.log('Hi!');
+ }
+ 
+ // call the function
+ sayHi();
+               </code></pre>
+              
+            </ul>
+        </ol>
+      </section>
+           
+         <!-- Review: Actions-->
+          <section>
+            <h3>Review: jQuery Actions</h3>
+              <p>The foundation of all jQuery is combining a selector with an action:
+              </p>
+            <div>
+              <pre><code contenteditable class = "javascript">
+          $('selector').action();     
+              </code></pre>
+            </div>
+            <p>You can find a comprehensive list of ALL available jQuery actions at: <a href="http://api.jquery.com/">http://api.jquery.com/</a>.</p>
+          </section>
+
+            <!--
+
+            - The jQuery UI Library
+            -- Accordion Menus
+            -- Datepicker
+            -- Progressbars
+
+            - What is AJAX?
+            -- Using AJAX for single-page applications
+
+            - Additional topics as time permits!
+
+             -->
+
+            <section>
+              <h3>The jQuery UI Library</h3>
+                <p>...
+                </p>
+            </section>
+         
+            <section>
+                <h3>Accordions in jQuery UI</h3>
+                <p>...
+                </p>
+            </section>
+
+            <section>
+                <h3>The Datepicker in jQuery UI</h3>
+                <p>...
+                </p>
+            </section>
+
+            <section>
+                <h3>Progressbars in jQuery UI</h3>
+                <p>...
+                </p>
+            </section>
+         
+       
+            <!-- What is AJAX-->
+            <section>
+              <h3>
+                <span class="orange">AJAX</span>:
+                  <br>
+                  <span class="orange">A</span>synchronous <span class="orange">J</span>avaScript <span class="orange">a</span>nd <span class="orange">X</span>ML
+              </h3>
+              <ul>
+                <li class = "fragment">AJAX = <span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
+                <li class = "fragment">Method to communicate to a server or API</li>
+                <li class = "fragment">Asynchronous means:
+                  <ul>
+                    <li class = "fragment">I ask Twitter for all the tweets ever!</li>
+                    <li class = "fragment">That will take a while</li>
+                    <li class = "fragment">My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
+                    <li class = "fragment">Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
+                  </ul>
+                </li>
+                <li class = "fragment">Requests and results can be in JavaScript or XML</li>
+              </ul>
+            </section>
+
+                  <section>
+                    <h3>jQuery Ajax</h3>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+              $.ajax({
+            		url: 'http://site.com',
+            		...			
+            	});
+                    	</code></pre>
+                    </div>
+                    <ul>
+                      <li class = "fragment"> $.ajax() -- jQuery method for sending AJAX requests</li>
+                      <li class = "fragment">Takes one parameter -- a JavaScript object</li>
+                      <li class = "fragment">Note the {}</li>
+                      <li class = "fragment"><span class = "blue">url</span> -- first property, the url where you will send the AJAX request</li>
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h3>jQuery Ajax</h3>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+          	...
+          	data: {
+          	  parameter: 'value',
+          	  parameter: 'value'
+          	},
+          	...	
+                    	</code></pre>
+                    </div>
+                    <ul>
+                      <li class = "fragment"><span class = "blue">data</span> --  a JavaScript object with all the parameters for the AJAX request</li>
+                      <li class = "fragment">Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
+                        <ul>
+                          <li>key (refers to api key)</li>
+                          <li>city</li>
+                          <li>country</li>
+                          <li>topic</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </section>
+
+                  <section>
+                    <h3>jQuery Ajax</h3>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+          	...
+            crossDomain: true,
+          	dataType: 'jsonp',
+          	type: "GET",
+          	...	
+                    	</code></pre>
+                    </div>
+                    <ul>
+                      <li class = "fragment"><span class = "blue">crossDomain</span> -- are you sending the request to a domain that is not your own?</li>
+                      <li class = "fragment"><span class = "blue">dataType</span> -- how will you evaluate the data returned</li>
+                      <li class = "fragment"><span class = "blue">type</span> -- what type of request is it?
+                        <ul>
+                          <li>GET -- retrieve data</li>
+                          <li>POST -- post new data</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </section>
+
+
+                  <section>
+                    <h3>jQuery Ajax</h3>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+          	...
+            success: function (data) {
+          	    // code with data returned
+          	},
+          	error: function(data) {
+          		 // code with error returned
+          	}
+          	...	
+                    	</code></pre>
+                    </div>
+                    <ul>
+                      <li class = "fragment"><span class = "blue">success</span> -- code that will execute if results are sent back successfully</li>
+                      <li class = "fragment"><span class = "blue">error</span> -- code that will execute if results return an error</li>
+                    </ul>
+                  </section>
+
+            <section>
+              <h3>Additional Topics, Time Permitting!</h3>
+            </section>
+            <!-- additional topics, time permitting -->
+              <!-- HTML forms-->
+              <section>
+                <h3>HTML forms</h3>
+                <p>HTML Forms allow users to enter information</p>
+                <div class = "fragment">
+                  <pre><code contenteditable class = "html">
+      &lt;form id ="about-me">
+        &lt;input type = "text" id = "name" placeholder = "Enter a name"/>
+        &lt;label>Do you like popcorn&lt;/label>
+        Yes &lt;input type = "radio" name = "popcorn" val = "yes"/>
+        No &lt;input type = "radio" name = "popcorn" val = "no"/>
+        &lt;label>Favorite Dinosaur&lt;/label>
+        &lt;select id = "dinosaur">
+          &lt;option value = "t-rex">Tyrannosaurus Rex&lt;/option>
+          &lt;option value = "tri">Triceratops&lt;/option>
+          &lt;option value = "stego">Stegosaurus&lt;/option>
+          &lt;option value = "other">Other&lt;/option>
+        &lt;/select>
+        &lt;input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
+      &lt;/form>
+                  </code></pre>
+                </div>
+              </section>
+
+              <section>
+                <h3>HTML forms</h3>
+                <p>HTML Forms allow users to enter information</p>
+                <div class = "fragment left-align">
+      <form>
+        <input type = "text" id = "name" placeholder = "Enter a name" style = "width:300px; padding: 7px; font-size:1em"/><br/>
+        <label>Do you like popcorn</label><br/>
+        Yes <input type = "radio" name = "popcorn" val = "yes" style ="font-size:1em"/>
+        No <input type = "radio" name = "popcorn" val = "no" style ="font-size:1em"/><br/>
+        <label>Favorite Dinosaur</label><br/>
+        <select id = "dinosaur" style = "padding: 7px; font-size:1em">
+          <option>Tyrannosaurus Rex</option>
+          <option>Triceratops</option>
+          <option>Stegosaurus</option>
+          <option>Other</option>
+        </select><br/>
+        <input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
+      </form>
+                </div>
+              </section>
+
+              <!-- JavaScript and HTML Forms-->
+              <section>
+                <h3>Values from Forms</h3>
+                <p>You can use JavaScript to get values from a form</p>
+                <div class = "fragment">
+                  <pre><code contenteditable class = "javascript">
+          $('#name').val();
+          $('select#dinosaur').val();
+          $('input:radio[name=popcorn]:checked').val();
+                  </code></pre>
+                </div>
+                <div class = "fragment">
+                  Or set values of a form
+                  <pre><code contenteditable class = "javascript">
+          $('#name').val('Mitch');
+          $('select#dinosaur').val('stego');
+          $('input:radio[name=popcorn]:checked').val('no');
+                  </code></pre>
+                </div>
+              </section>
+
+              <section>
+                <h3>Values from Forms</h3>
+                <p>jQuery has an event for form submission</p>
+                <div class = "fragment">
+                  <pre><code contenteditable class = "javascript">
+            $('#about-me').submit(function(event){
+                  //code to execute after submission
+                  return false;
+              });
+                  </code></pre>
+                  <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
+                </div>
+              </section>
+                    <!-- -->
+                     <section>
+                       <h2>Questions?</h2>
+                       <div style = "font-size:1200%; height:100%; margin-top:40%" class ="blue">?
+                         <div class ="clear"></div></div>
+                     </section>
+         			</div>
+           		<footer>
+                 <div class="copyright">
+                   Javascript ~ Girl Develop It ~
+                   <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png" /></a>
+                 </div>
+               </footer>
+         		</div>
+
+
+         		<script src="reveal/lib/js/head.min.js"></script>
+         		<script src="reveal/js/reveal.min.js"></script>
+
+         		<script>
+
+         			// Full list of configuration options available here:
+         			// https://github.com/hakimel/reveal.js#configuration
+         			Reveal.initialize({
+         				controls: true,
+         				progress: true,
+         				history: true,
+
+         				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+         				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+         				// Optional libraries used to extend on reveal.js
+         				dependencies: [
+         					{ src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+         					{ src: 'reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         					{ src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         					{ src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+         					{ src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+         					{ src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+         				]
+         			});
+
+         		</script>
+
+         	</body>
+         </html>
