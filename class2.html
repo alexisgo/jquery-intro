@@ -752,10 +752,129 @@ function swapImages() {
                   <h3>JavaScript Objects</h3>
                   <div class="left-align">
                     <p>The last slide made use of a JavaScript object in order to bind multiple events to the same element.</p>
-                    
+                    <p class="fragment">What is an object?</p>
                   </div>
                 </section>
                 
+                
+                  <!-- Objects-->
+                  <section>
+                    <h3>Objects</h3>
+                    <p>Objects are a data type that let us store a collection of properties and methods.</p>
+                    <p>The simplest object is just the empty curly braces {}<p>
+                      <p>In more typical objects, the curly braces {} will contain one or more property/value pairs, separated by commas.</p>
+                                        <pre><code contenteditable class = "javascript">
+  var objectName = { 
+    propertyName: propertyValue,
+    propertyName: propertyValue
+  };
+                      </pre></code>
+
+                  </section>
+
+                   <section>
+                      <h3>Objects</h3>
+                      <p>Objects are a data type that let us store a collection of properties and methods.</p>
+                      <pre><code contenteditable class = "javascript">
+    var objectName = { 
+      propertyName: propertyValue,
+      propertyName: propertyValue,
+      propertyName: propertyValue
+    };
+                      </code></pre>
+                      <div class = "fragment">
+                        <pre><code contenteditable class = "javascript">
+    var charlie = {
+      age: 8,
+      name: "Charlie Brown",
+      likes: ["baseball", "The little red-haired girl"],
+      pet: "Snoopy"
+    };
+                      </code></pre>
+                      </div>
+                    </section>
+                  <section>
+                    <h3>Objects -- returning values</h3>
+                    <p>Access values of "properties" using "dot notation":</p>
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+  var charlie = {
+    age: 8,
+    name: "Charlie Brown",
+    likes: ["baseball", "The little red-haired girl"],
+    pet: "Snoopy"
+  };
+                </code></pre>
+                    </div> 
+                    <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+  var pet = charlie.pet;
+                      </code></pre>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3>Objects -- returning values</h3>
+                    <div class = "fragment">
+                      Or using "bracket notation" (like arrays):
+                      <pre><code contenteditable class = "javascript">
+  var name = charlie['name'];
+                      </code></pre>
+                    </div>
+                    <div class = "fragment">
+                      Non-existent properties will return undefined:
+                      <pre><code contenteditable class = "javascript">
+  var gender = charlie.gender
+                      </code></pre>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3>Objects -- changing values</h3>
+                    <p>Use dot or bracket notation with the assignment operator to change objects.</p>
+                    <div class = "fragment">
+                    Change existing properties:
+                    <pre><code contenteditable class = "javascript">
+                    charlie.name = "Chuck";
+                    </code></pre>
+                    </div>
+                    <div class = "fragment">
+                      Or add new properties:
+                      <pre><code contenteditable class = "javascript">
+                    charlie.gender = "male";
+                      </code></pre>
+                    </div>
+                    <div class ="fragment">
+                    You can also delete properties:
+                    <pre><code contenteditable class = "javascript">
+                    delete charlie.gender;
+                    </code></pre>
+                    </div>
+                  </section>
+                
+                   <!-- Combining Events -->            
+
+                    <section>
+                      <h3>Combining events</h3>
+                      <p>If you want multiple events to happen on the same element, you should use the bind() action</p>
+                      <div class = "fragment">
+                      <pre><code contenteditable class = "javascript">
+      $('.box').bind( 
+        {
+            click: function() {
+              $(this).css('background-color', 'green')
+            },
+            mouseenter: function() {
+              $(this).css('background-color', 'purple')
+            },
+            mouseleave: function(){
+              $(this).css('background-color', 'orange')
+            }
+        }
+      );
+                      </code></pre>
+                      </div>
+                    </section>
                  <!-- 
                     * Modifying HTML elements
                   -->
@@ -800,15 +919,15 @@ function swapImages() {
                       <div class = "fragment">
                         Append html
                         <pre><code contenteditable class = "javascript">
-                var div = $('#results');
-                div.append('Additional html');
+  var div = $('#results');
+  div.append('&lt;p&gt;Additional html&lt;/p&gt;');
                         </code></pre>
                       </div>
                       <div class = "fragment">
                         Prepend html
                         <pre><code contenteditable class = "javascript">
-                var div = $('#results');
-                div.prepend('Additional html (on top)');
+  var div = $('#results');
+  div.append('&lt;p&gt;Additional html (on top)&lt;/p&gt;');
                         </code></pre>
                       </div>
                     </section>
