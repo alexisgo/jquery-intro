@@ -141,27 +141,62 @@
           <!-- Using Cloud9 -->
           <section>
             <h3>Setting Up jQuery on Cloud9</h3>
+            <div class="left-align">
             <p>Last week, we used <a href="http://jsbin.com" target="_blank">JSBin</a>, which is an online editor that
               is great for experimenting with jQuery.</p>
-            <p>Today, we will also use Cloud9, which is a more realistic development environment.</p>
-            <p>If you haven't already, please create an account at <a href="http://c9.io">http://c9.io</a></p>
+            <p class="fragment">Today, we will continue to use JSBin, but let's take a moment to cover how we'd set up jQuery in a more traditional development environment.</p>
+            <p class="fragment">To see this, we'll use the online editor Cloud9</p>
+            <p class="fragment">If you haven't already, please create an account at <a href="http://c9.io">http://c9.io</a></p>
+            </div>
           </section>
           
           <!-- creating a separate JS file -->
           <section>
             <h3>Creating a Separate JavaScript file</h3>
+            <div class="left-align">
+              <p>When working outside of JSBin, we need to keep all our custom jQuery code in a separate JavaScript file. This file must have the file extension .js</p>
+              <img src="images/separateJS.png">
+            </div>
           </section>
           
           <!-- linking that JS file to the HTML file -->
           <section>
             <h3>Linking Your JavaScript file to your HTML file</h3>
+            <div class="left-align">
+              <p>When working outside of JSBin, we need to:
+                <ol>
+                  <li>Link to the jQuery Library</li>
+                  <li>Link our separate JavaScript file to our HTML file</li>
+                </ol>  
+                </p>
+              <p>We do this with the following code:</p>
+              <pre><code>
+&lt;head&gt;          
+  &lt;script src="your-local-jquery-file.js"&gt;&lt;/script&gt;
+  &lt;script src="your-custom-jquery-code.js"&gt;&lt;/script&gt;
+&lt;/head&gt;  
+              </code></pre>
+            </div>
           </section>
          
-         <!--
-         TO DO: 
-         * figure out how to fade in 
+          <section>
+            <h3>A Basic Cloud9 Template</h3>
+            <div class="left-align">
+              <ul>
+                <li>Once you are signed into your Cloud9 account, click <span class="green">Create New Workspace > Clone from URL</span></li> 
+                <li>paste in the URL: <em>https://github.com/alexisgo/class2-starting-files</em> and click Create</li>
+                <li>The project will be added to the lefthand sidebar. Once the project name turns blue, look for the green <span class="green">"Start Editing"</span> button</li>
 
-         
+                
+              </ul>
+            </div>
+          </section>
+
+           <section>
+              <h3>Demo of Basic Setup in Cloud9</h3>
+                <a href="https://c9.io/alexisgo_1/intro-jquery" target="_blank">https://c9.io/alexisgo_1/intro-jquery</a>
+            </section>
+         <!--         
   - How to add new elements to, or remove them from you website with add() and remove()
   - Animating changes to CSS properties with animate()
   - How to use callbacks to write custom code in response to user actions (click, scroll, keypress, etc)
@@ -185,6 +220,9 @@ for class 3:
                     <li class = "fragment">mouseenter -- mouse goes inside an element</li>
                     <li class = "fragment">mouseleave -- mouse leaves an element</li>
                     <li class = "fragment">click -- mouse clicks an element</li>
+                    <li class = "fragment">keydown -- the user first presses a key on the keyboard.</li>
+                    <li class = "fragment"><a href="http://api.jquery.com/scroll/" target="_blank">scroll</a> -- the user scrolls</li>
+                    
                     <li class = "fragment"><a href = "http://api.jquery.com/category/events/" target = "_blank">Other events</a></li>
                   </ul>
                 </section>
@@ -477,27 +515,19 @@ $(document).ready(
                                             <p>Javascript can run through code based on conditions</p>
                                             <div class = "fragment">
                                             <pre><code contenteditable class ="javascript">
-                                            if (condition here){
-                                              // statement to execute
-                                            }
+  if (condition here){
+    // statement to execute
+  }
                                   </code></pre>
                                             </div>
                                             <div class = "fragment">
                                   <pre><code contenteditable class ="javascript">
-                                            var bananas = 1;
-                                            if (bananas < 2){
-                                              console.log("You should buy more bananas!")
-                                            }
+  var bananas = 1;
+  
+  if (bananas < 2){
+    console.log("You should buy more bananas!")
+  }
                                   </code></pre>
-                                          </div>
-                                          <div class = "fragment">
-                                          Note: you can write comments that only you, not the browser reads
-                                          <pre><code contenteditable class ="javascript">
-                                              // comment on one line
-                                              /* comment on 
-                                                multiple lines
-                                                */
-                                          </code></pre>
                                           </div>
                                           </section>
 
@@ -525,17 +555,17 @@ $(document).ready(
                                             </table>
                                             <div class = "fragment"> 
                                               <pre><code contenteditable class ="javascript">
-                                          var bananas = 5;
-                                          var oranges = 2;
-                                          if (bananas > 3 && oranges > 3){
-                                            console.log('Eat fruit!');
-                                          }
-                                          if (bananas < 2 || oranges < 2){
-                                            console.log('Buy fruit!');
-                                          }
-                                          if (!(bananas >= 0)){
-                                            console.log('How do you have negative bananas?');
-                                          }
+  var bananas = 5;
+  var oranges = 2;
+  if (bananas > 3 && oranges > 3){
+    console.log('Eat fruit!');
+  }
+  if (bananas < 2 || oranges < 2){
+    console.log('Buy fruit!');
+  }
+  if (!(bananas >= 0)){
+    console.log('How do you have negative bananas?');
+  }
                                               </code></pre>
                                             </div>
                                           </section>
@@ -545,12 +575,13 @@ $(document).ready(
                                             <h3>If/Else Statement</h3>
                                             <p>You can use else to perform an alternative action if the "if" fails</p>
                                             <pre><code contenteditable class ="javascript">
-                                            var bananas = 5;
-                                            if (bananas > 3){
-                                              console.log('Eat a banana!');
-                                            } else {
-                                              console.log('Buy a banana!');
-                                            }
+  var bananas = 5;
+  if (bananas > 3){
+    console.log('Eat a banana!');
+  } 
+  else {
+    console.log('Buy a banana!');
+  }
                                             </code></pre>
                                           </section>
 
@@ -558,16 +589,16 @@ $(document).ready(
                                             <h3>If/Else Statement</h3>
                                             <p>You can use else if to have multiple choices</p>
                                             <pre><code contenteditable class ="javascript">
-                                  var age = 20;
-                                  if (age >= 35) {
-                                    console.log('You can vote AND hold any place in government!');
-                                  } else if (age >= 25) {
-                                    console.log('You can vote AND run for the Senate!');
-                                  } else if (age >= 18) {
-                                    console.log('You can vote!');
-                                  } else {
-                                    console.log('You have no voice in government (yet)!');
-                                  }
+  var age = 20;
+  if (age >= 35) {
+    console.log('You can vote AND hold any place in government!');
+  } else if (age >= 25) {
+    console.log('You can vote AND run for the Senate!');
+  } else if (age >= 18) {
+    console.log('You can vote!');
+  } else {
+    console.log('You have no voice in government (yet)!');
+  }
                                             </code></pre>
                                           </section>      
                                   
