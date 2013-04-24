@@ -172,11 +172,7 @@ $(document).ready(
                 </p>
             </section>
 
-           
-            <section>
-              <h3>Additional Topics, Time Permitting!</h3>
-            </section>
-            <!-- additional topics, time permitting -->
+          
               <!-- HTML forms-->
               <section>
                 <h3>HTML forms</h3>
@@ -298,6 +294,68 @@ $(document).ready(
                     </ul>
                   </section>
 
+                  <section>
+                    <h3>jQuery's load() action</h3>
+                    <div class="left-align">
+                    <p>jQuery provides a main ajax() action to perform AJAX requests, but it also has shorthand methods to perform more common kinds of AJAX requests with less code.</p>
+                    <p>One of those methods is <a href="http://api.jquery.com/load/" target="_blank">load()</a>, and we will use it to build a simple single-page application.
+                    </p>
+                    <pre><code>
+  $(document).ready(
+    function(){
+      $(".sidebar").load('sidebar.html');
+     }
+  );
+                      </code></pre>
+                    </div>
+                  </section>
+                  
+                  
+                    <section>
+                      <h3>jQuery's load() action</h3>
+                      <div class="left-align">
+                      <p>Let's say you have a single file of HTML called "sidebar.html" that lays out your sidebar. You want this sidebar present in every single page on your website. </p>
+                      <p>Rather than including the HTML code that makes up this sidebar on every page of the site, we can instead use the jQuery <span class="green">load()</span> action to inject the HTML from an external file (sidebar.html) each time.</p>
+                      </p>
+                      <pre><code>
+    $(document).ready(
+      function(){
+        $(".sidebar").load('sidebar.html');
+       }
+    );
+                        </code></pre>                          
+                      </div>
+                    </section>    
+                    
+                    <section>
+                      <h3>jQuery's load() action visualized</h3>
+                      <img src="images/websiteforload.png">
+                    </section>
+                    
+                                  
+                     <section>
+                        <h3>jQuery's load() action</h3>
+                        <div class="left-align">
+                        <p>We can use the jQuery <span class="green">load()</span> action to inject the HTML from an external file (sidebar.html) each time.</p>
+                        </p>
+                        <pre><code>
+      $(document).ready(
+        function(){
+          $(".sidebar").load('sidebar.html');
+         }
+      );
+                          </code></pre>
+                          <p>
+                            This external file (sidebar.html) should not contain &lt;html&gt; or &lt;body&gt;, just the HTML that creates the sidebar.</p>
+                          <p>The advantage of this approach is that (1) it saves you time and (2) when you need to make changes to the sidebar, you just change that one sidebar.html file!</p>
+                        </div>
+                      </section>                  
+                      
+                      <section>
+                        <h3>jQuery's load() action visualized</h3>
+                        <img src="images/jqueryload.png">
+                      </section>
+                      
                         <section>
                           <h3>jQuery Ajax</h3>
                           <div class = "fragment">
