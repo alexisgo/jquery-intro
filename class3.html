@@ -40,7 +40,7 @@
         <section>
           <img src = "images/gdi_logo_badge.png" width="50%">
           <h3>Intro to jQuery</h3>
-          <h4>Class 2</h4>
+          <h4>Class 3</h4>
         </section>
         
         <!-- Welcome-->
@@ -57,69 +57,6 @@
           </ul>
           </div>
         </section>
-
-        <!-- Review: Statements-->
-          <section>
-            <h3>Review: JavaScript Vocabulary</h3>
-            <ol>
-              <li class="orange">Statements</li>
-                <ul>
-                  <li>Each line in JavaScript is an instruction, aka a <span class="green">statement</span></li>
-                  <li>When the browser reads it, it "executes the script"</li>
-                  <li>All statements end with a semicolon ;</li>
-                  <pre><code contenteditable class ="javascript">
-  // each of these lines is a statement
-  console.log('Hello');
-  var foo = "testing testing";
-  callSomeFunction();
-                  </code></pre>
-                  
-                </ul>
-              <li>Variables</li>
-              <li>Functions</li>
-            </ol>
-          </section>
-          
-           <!-- Review: Variables-->
-          <section>
-            <h3>Review: Variables</h3>
-            <ol>
-              <li>Statements</li>
-              <li class="orange">Variables</li>
-                <ul>
-                  <li>Variables give us a place to store values</li>
-                  <li>We declare them with the keyword <span class="green">var</span> and assign them with the = sign.</li>
-                                  <pre><code contenteditable class ="javascript">
-  var bananas = 5;
-                                  </code></pre>
-              </ul>
-              <li>Functions</li>
-            </ol>
-          </section>     
-          
-        <!-- Review: Functions-->
-      <section>
-        <h3>Review: Functions</h3>
-        <ol>
-          <li>Statements</li>
-          <li>Variables</li>
-          <li class="orange">Functions</li>
-            <ul>
-              <li>Functions are re-usable collections of statements.</li>
-              <li>A way to package up and easily reuse chunks of code</li>
-              <pre><code contenteditable class ="javascript">
- // declare the function
- function sayHi(){
-   console.log('Hi!');
- }
- 
- // call the function
- sayHi();
-               </code></pre>
-              
-            </ul>
-        </ol>
-      </section>
            
          <!-- Review: Actions-->
           <section>
@@ -134,6 +71,41 @@
             <p>You can find a comprehensive list of ALL available jQuery actions at: <a href="http://api.jquery.com/">http://api.jquery.com/</a>.</p>
           </section>
 
+
+           <section>
+              <h3>Review: HTML events</h3>
+              <p>Events occur on a webpage via user interaction</p>
+              <p class = "fragment">Common Events:</p>
+              <ul>
+                <li class = "fragment">mouseenter -- mouse goes inside an element</li>
+                <li class = "fragment">mouseleave -- mouse leaves an element</li>
+                <li class = "fragment">click -- mouse clicks an element</li>
+                <li class = "fragment">keydown -- the user first presses a key on the keyboard.</li>
+                <li class = "fragment"><a href="http://api.jquery.com/scroll/" target="_blank">scroll</a> -- the user scrolls</li>
+                
+                <li class = "fragment"><a href = "http://api.jquery.com/category/events/" target = "_blank">Other events</a></li>
+              </ul>
+            </section>
+
+           <!-- Document Ready-->
+            <section>
+              <h3>Review: Document Ready</h3>
+              <div class = "left-align">
+              <p>One of the most common events we'll want to pay attention to is when the webpage has loaded</p>  
+              <p class = "fragment">Almost always, you don't want the JavaScript to be called until the page is loaded</p>
+            <div class = "fragment">
+              Document ready is a method called when the page is loaded
+              <pre><code contenteditable class = "javascript">
+$(document).ready(
+  function() {
+   // your jQuery code goes here 
+  }
+);
+              </code></pre>
+            </div>
+              
+              </div>
+            </section>
             <!--
 
             leftover from class 2:
@@ -156,7 +128,7 @@
                            <section>
                              <h3>jQuery's animate() action</h3>
                              <pre><code>
-             .animate( properties [, duration ] [, easing ] [, complete ] )
+  .animate( properties [, duration ] [, easing ] [, complete ] )
                                </code></pre>
                            </section>
 
@@ -179,121 +151,28 @@
             </section>
 
             <section>
+              <h3>The Spinner Number Picker in jQuery UI</h3>
+              <pre><code contenteditable class = "javascript">
+  // min # guests is 1, max is 10
+  $('#guests').spinner(
+    {
+      min:1, 
+      max:10
+    }
+  );
+
+  // set starting value to 2
+  $('#guests').spinner("value", 2);
+              </code></pre>
+            </section>
+
+            <section>
                 <h3>Progressbars in jQuery UI</h3>
                 <p>...
                 </p>
             </section>
-         
-       
-            <!-- What is AJAX-->
-            <section>
-              <h3>
-                <span class="orange">AJAX</span>:
-                  <br>
-                  <span class="orange">A</span>synchronous <span class="orange">J</span>avaScript <span class="orange">a</span>nd <span class="orange">X</span>ML
-              </h3>
-              <ul>
-                <li class = "fragment">AJAX = <span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
-                <li class = "fragment">Method to communicate to a server or API</li>
-                <li class = "fragment">Asynchronous means:
-                  <ul>
-                    <li class = "fragment">I ask Twitter for all the tweets ever!</li>
-                    <li class = "fragment">That will take a while</li>
-                    <li class = "fragment">My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
-                    <li class = "fragment">Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
-                  </ul>
-                </li>
-                <li class = "fragment">Requests and results can be in JavaScript or XML</li>
-              </ul>
-            </section>
 
-                  <section>
-                    <h3>jQuery Ajax</h3>
-                    <div class = "fragment">
-                      <pre><code contenteditable class = "javascript">
-              $.ajax({
-            		url: 'http://site.com',
-            		...			
-            	});
-                    	</code></pre>
-                    </div>
-                    <ul>
-                      <li class = "fragment"> $.ajax() -- jQuery method for sending AJAX requests</li>
-                      <li class = "fragment">Takes one parameter -- a JavaScript object</li>
-                      <li class = "fragment">Note the {}</li>
-                      <li class = "fragment"><span class = "blue">url</span> -- first property, the url where you will send the AJAX request</li>
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h3>jQuery Ajax</h3>
-                    <div class = "fragment">
-                      <pre><code contenteditable class = "javascript">
-          	...
-          	data: {
-          	  parameter: 'value',
-          	  parameter: 'value'
-          	},
-          	...	
-                    	</code></pre>
-                    </div>
-                    <ul>
-                      <li class = "fragment"><span class = "blue">data</span> --  a JavaScript object with all the parameters for the AJAX request</li>
-                      <li class = "fragment">Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
-                        <ul>
-                          <li>key (refers to api key)</li>
-                          <li>city</li>
-                          <li>country</li>
-                          <li>topic</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </section>
-
-                  <section>
-                    <h3>jQuery Ajax</h3>
-                    <div class = "fragment">
-                      <pre><code contenteditable class = "javascript">
-          	...
-            crossDomain: true,
-          	dataType: 'jsonp',
-          	type: "GET",
-          	...	
-                    	</code></pre>
-                    </div>
-                    <ul>
-                      <li class = "fragment"><span class = "blue">crossDomain</span> -- are you sending the request to a domain that is not your own?</li>
-                      <li class = "fragment"><span class = "blue">dataType</span> -- how will you evaluate the data returned</li>
-                      <li class = "fragment"><span class = "blue">type</span> -- what type of request is it?
-                        <ul>
-                          <li>GET -- retrieve data</li>
-                          <li>POST -- post new data</li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </section>
-
-
-                  <section>
-                    <h3>jQuery Ajax</h3>
-                    <div class = "fragment">
-                      <pre><code contenteditable class = "javascript">
-          	...
-            success: function (data) {
-          	    // code with data returned
-          	},
-          	error: function(data) {
-          		 // code with error returned
-          	}
-          	...	
-                    	</code></pre>
-                    </div>
-                    <ul>
-                      <li class = "fragment"><span class = "blue">success</span> -- code that will execute if results are sent back successfully</li>
-                      <li class = "fragment"><span class = "blue">error</span> -- code that will execute if results return an error</li>
-                    </ul>
-                  </section>
-
+           
             <section>
               <h3>Additional Topics, Time Permitting!</h3>
             </section>
@@ -346,7 +225,7 @@
               <!-- JavaScript and HTML Forms-->
               <section>
                 <h3>Values from Forms</h3>
-                <p>You can use JavaScript to get values from a form</p>
+                <p>You can use jQuery to get values from a form</p>
                 <div class = "fragment">
                   <pre><code contenteditable class = "javascript">
           $('#name').val();
@@ -377,6 +256,136 @@
                   <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
                 </div>
               </section>
+              
+                <section>
+                  <h3>Form Submission Event</h3>
+                  <p>We listened for the submit event in the lolcat generator: <a href="http://jsbin.com/igulej/4/edit" target="_blank">http://jsbin.com/igulej/4/edit</a></p>
+                  <div class = "fragment">
+                    <pre><code contenteditable class = "javascript">
+  $("form").submit(uploadAndCaption);
+  
+  function uploadAndCaption(){
+    var text = $("#enterText").val();
+    var photo = $("#enterPhoto").val();
+
+   // append a new img with the provided URL inside a li element
+    $("#photoList").append("&lt;li&gt;&lt;img src='" + photo + "' &gt;&lt;/li&gt;");
+    return false;
+  }
+                    </code></pre>
+                    <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
+                  </div>
+                </section>   
+                
+                 <!-- What is AJAX-->
+                  <section>
+                    <h3>
+                      <span class="orange">AJAX</span>:
+                        <br>
+                        <span class="orange">A</span>synchronous <span class="orange">J</span>avaScript <span class="orange">a</span>nd <span class="orange">X</span>ML
+                    </h3>
+                    <ul>
+                      <li class = "fragment">AJAX = <span class = "yellow">A</span>synchronous <span class = "yellow">J</span>avaScript <span class = "yellow">a</span>nd <span class = "yellow">X</span>ML</li>
+                      <li class = "fragment">Method to communicate to a server or API</li>
+                      <li class = "fragment">Asynchronous means:
+                        <ul>
+                          <li class = "fragment">I ask Twitter for all the tweets ever! That will take a while</li>
+                          <li class = "fragment">My <span class = "green">whole website</span> could be <span class = "green">locked up</span> while I wait!</li>
+                          <li class = "fragment">Or, my call can be <span class = "blue">'asynchronous'</span> and my website will just <span class = "blue">listen for Twitter's response</span> with one ear, but go about <span class = "blue">normal business until the response arrives</span>.
+                        </ul>
+                      </li>
+                      <li class = "fragment">Requests and results can be in JavaScript or XML</li>
+                    </ul>
+                  </section>
+
+                        <section>
+                          <h3>jQuery Ajax</h3>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+                    $.ajax({
+                  		url: 'http://site.com',
+                  		...			
+                  	});
+                          	</code></pre>
+                          </div>
+                          <ul>
+                            <li class = "fragment"> $.ajax() -- jQuery method for sending AJAX requests</li>
+                            <li class = "fragment">Takes one parameter -- a JavaScript object</li>
+                            <li class = "fragment">Note the {}</li>
+                            <li class = "fragment"><span class = "blue">url</span> -- first property, the url where you will send the AJAX request</li>
+                          </ul>
+                        </section>
+
+                        <section>
+                          <h3>jQuery Ajax</h3>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+                	...
+                	data: {
+                	  parameter: 'value',
+                	  parameter: 'value'
+                	},
+                	...	
+                          	</code></pre>
+                          </div>
+                          <ul>
+                            <li class = "fragment"><span class = "blue">data</span> --  a JavaScript object with all the parameters for the AJAX request</li>
+                            <li class = "fragment">Some parameters in the <a href = "http://www.meetup.com/meetup_api/docs/2/open_events/" target = "_blank">Meetup open events</a>
+                              <ul>
+                                <li>key (refers to api key)</li>
+                                <li>city</li>
+                                <li>country</li>
+                                <li>topic</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </section>
+
+                        <section>
+                          <h3>jQuery Ajax</h3>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+                	...
+                  crossDomain: true,
+                	dataType: 'jsonp',
+                	type: "GET",
+                	...	
+                          	</code></pre>
+                          </div>
+                          <ul>
+                            <li class = "fragment"><span class = "blue">crossDomain</span> -- are you sending the request to a domain that is not your own?</li>
+                            <li class = "fragment"><span class = "blue">dataType</span> -- how will you evaluate the data returned</li>
+                            <li class = "fragment"><span class = "blue">type</span> -- what type of request is it?
+                              <ul>
+                                <li>GET -- retrieve data</li>
+                                <li>POST -- post new data</li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </section>
+
+
+                        <section>
+                          <h3>jQuery Ajax</h3>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+                	...
+                  success: function (data) {
+                	    // code with data returned
+                	},
+                	error: function(data) {
+                		 // code with error returned
+                	}
+                	...	
+                          	</code></pre>
+                          </div>
+                          <ul>
+                            <li class = "fragment"><span class = "blue">success</span> -- code that will execute if results are sent back successfully</li>
+                            <li class = "fragment"><span class = "blue">error</span> -- code that will execute if results return an error</li>
+                          </ul>
+                        </section>
+                
+                         
                     <!-- -->
                      <section>
                        <h2>Questions?</h2>
