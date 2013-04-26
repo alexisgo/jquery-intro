@@ -28,6 +28,13 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- jquery ui-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    
 	</head>
 
 	<body>
@@ -139,17 +146,67 @@ $(document).ready(
             </section>
          
             <section>
+              <h3>jQuery UI: In-Class Lab</h3>
+              <div class="left-align">
+                <p>In order to practice using jQuery UI, we'll work together to enrich this JSBin for a restaurant's website: <a href="" target="_blank">...</a>
+                </p>
+                <p class="fragment">The comments provide an outline of all the steps we'll take to complete the page.</p>
+                <p class="fragment">If you get stuck at any point, feel free to refer to the solution, which is at: <a href="" target="_blank">...</a>
+                  </p>
+                </div>
+            </section>
+            
+            <section>
                 <h3>Accordions in jQuery UI</h3>
+                <ul>
+                <li>Accordions are a collapsible/expandable menu.
+                </li>
+                <li>In jQuery UI, we can create an accordion menu from pairs of header elements (&lt;h1&gt;, &lt;h2&gt; etc) and content elements (like &lt;div&gt;s)
+                </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Lab: Adding an Accordion Menu</h3>
                 <p>...
                 </p>
             </section>
 
             <section>
                 <h3>The Datepicker in jQuery UI</h3>
-                <p>...
+                <p>We can transform a regular &lt;input&gt; element into a dynamic date picker with the jQuery UI <span class="green">datepicker()</span> action.
                 </p>
+                <script>
+                $(document).ready(
+                  function() {
+                    var dateinput = $('#date');  
+                    console.log("datepicker code ran and the input is " + dateinput);                  
+                    $('#date').datepicker();
+                  }
+                  );
+                </script>
+               <pre><code contenteditable class = "javascript">
+  $('#date').datepicker();               
+               </code></pre>
+
+                <p>Try clicking inside this input field to try out the jQuery UI Datepicker:</p>
+                <form>
+                  <label>Date: </label>
+                  <input type="text" id="date">
+                </form>
             </section>
 
+            <section>
+                <h3>Lab: Adding a Datepicker</h3>
+                <p>We already have an &lt;input&gt; element (with its id set to date) on our restaurant's page:</p>
+                               <pre><code contenteditable class = "javascript">
+&lt;input type="text" id="date"&gt;
+                               </code></pre>
+                <p>Let's turn this &lt;input&gt; element into a Datepicker by adding the following line to our code:
+                <pre><code contenteditable class = "javascript">
+ $('#date').datepicker();               
+                </code></pre>
+            </section>
             <section>
               <h3>The Spinner Number Picker in jQuery UI</h3>
               <pre><code contenteditable class = "javascript">
