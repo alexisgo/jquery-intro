@@ -28,6 +28,13 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <!-- jquery ui-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    
 	</head>
 
 	<body>
@@ -134,22 +141,108 @@ $(document).ready(
 
             <section>
               <h3>The jQuery UI Library</h3>
-                <p>...
+                <p>jQuery UI is "a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice."
                 </p>
+                <p>
+                  <a href="http://jqueryui.com/" target="_blank">http://jqueryui.com/</a>
+                </p>
+                <p>The best place to see jQuery UI in action is the demo site: <a href="http://jqueryui.com/demos/" target="_blank">http://jqueryui.com/demos/</a></p>
             </section>
          
             <section>
+              <h3>jQuery UI: In-Class Lab</h3>
+              <div class="left-align">
+                <p>In order to practice using jQuery UI, we'll work together to enrich this JSBin for a restaurant's website: <a href="http://jsbin.com/uvexax/1/edit" target="_blank">http://jsbin.com/uvexax/1/edit</a>
+                </p>
+                <p>We are going to practice using three jQuery UI widgets: the <a href="http://jqueryui.com/accordion/" target="_blank">accordion</a>, the <a href="http://jqueryui.com/datepicker/" target="_blank">datepicker</a>, and the <a href="http://jqueryui.com/spinner/" target="_blank">spinner</a></p>
+                <p class="fragment">The comments provide an outline of all the steps we'll take to complete the page.</p>
+                <p class="fragment">If you get stuck at any point, feel free to refer to the solution, which is at: <a href="http://jsbin.com/esugoq/1/edit" target="_blank">http://jsbin.com/esugoq/1/edit</a>
+                  </p>
+                </div>
+            </section>
+            
+            <section>
                 <h3>Accordions in jQuery UI</h3>
+                <ul>
+                <li>Accordions are a collapsible/expandable menu.
+                </li>
+                <li >In jQuery UI, we can <a href="http://api.jqueryui.com/accordion/#entry-examples" target="_blank">create an accordion menu</a> from pairs of <span class="green">header elements</span> (&lt;h1&gt;, &lt;h2&gt; etc) and <span class="green">content</span> elements (like &lt;div&gt;s)
+                </li>
+                <li>For example, the following according is made up of two pairs of &lt;h4&gt; and &lt;div&gt; elements.</li>
+                </ul>
+
+                <script>
+                $(document).ready(
+                  function() {
+                    $('#exampleaccord').accordion();
+                  }
+                  );
+                </script>
+                <div id="exampleaccord">
+                  <h4>First Menu</h4>
+                  <div>Content content content this is my content</div>
+                  <h4>Second Menu</h4>
+                  <div>More content more content content this is my content</div>
+                </div>
+
+            </section>
+
+            <section>
+              <h3>Making an Accordion with jQuery UI</h3>
+              <p>To make an Accordion with jQuery UI, we first need a &lt;div&gt; element that holds two or more pairs of headers and content:</p>
+               <pre><code contenteditable class = "javascript">
+ &lt;div id="menu"&gt;   
+   &lt;h3&gt;First Section&lt;/h3&gt;
+   &lt;div&gt;Content content content (can include additional HTML embedded inside this div)&lt;/div&gt;
+   &lt;h3&gt;Second Section&lt;/h3&gt;
+   &lt;div&gt;Content content content&lt;/div&gt;
+ &lt;div&gt;            
+               </code></pre>
+               <p>Next, we turn that &lt;div&gt; element into an Accordion with the following line of jQuery:</p>
+                            <pre><code contenteditable class = "javascript">
+               $('#menu').accordion();               
+                            </code></pre>
+              
+            </section>
+            <section>
+                <h3>Lab: Adding an Accordion Menu</h3>
                 <p>...
                 </p>
             </section>
 
             <section>
                 <h3>The Datepicker in jQuery UI</h3>
-                <p>...
+                <p>We can transform a regular &lt;input&gt; element into a dynamic date picker with the jQuery UI <span class="green">datepicker()</span> action.
                 </p>
+                <script>
+                $(document).ready(
+                  function() {
+                    $('#date').datepicker();
+                  }
+                  );
+                </script>
+               <pre><code contenteditable class = "javascript">
+  $('#date').datepicker();               
+               </code></pre>
+
+                <p>Try clicking inside this input field to try out the jQuery UI Datepicker:</p>
+                <form>
+                  <label>Date: </label>
+                  <input type="text" id="date">
+                </form>
             </section>
 
+            <section>
+                <h3>Lab: Adding a Datepicker</h3>
+                <p>We already have an &lt;input&gt; element (with its id set to date) on our restaurant's page:</p>
+                               <pre><code contenteditable class = "javascript">
+&lt;input type="text" id="date"&gt;
+                               </code></pre>
+                <p>Let's turn this &lt;input&gt; element into a Datepicker by adding the following line to our code:
+                <pre><code contenteditable class = "javascript">
+ $('#date').datepicker();               
+                </code></pre>
+            </section>
             <section>
               <h3>The Spinner Number Picker in jQuery UI</h3>
               <pre><code contenteditable class = "javascript">
