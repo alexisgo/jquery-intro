@@ -137,11 +137,59 @@ $(document).ready(
                              <pre><code>
   .animate( properties [, duration ] [, easing ] [, complete ] )
                                </code></pre>
+                               <p>With jQuery's <span class="green">animate()</span> action, we can make changes to CSS properties occur over a period of time, instead of instantly, thus animating their changes.</p>
                            </section>
+
+                              <section>
+                                <h3>Lab: Using jQuery's animate()</h3>
+                                <div class="left-align">
+                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate CSS changes on three different div elements</p>
+                                  <p>We'll trigger each animation in response to a click on that div.</p>
+                                  <p>Please open up the lab code at: <a href="http://jsbin.com/irixaj/3/edit" target="_blank">http://jsbin.com/irixaj/3/edit</a></p>
+                                  <p>The solution lab (if you get stuck) is available at: <a href="http://jsbin.com/irixaj/2/edit" target="_blank">http://jsbin.com/irixaj/2/edit</a>
+                                  <p>You can try out the results of what we'll be building be clicking on the below three divs:</p>
+                                  
+                                  <script>
+                                  $(document).ready(
+                                    function() {
+                                      $('#one').click(
+                                        function() {
+                                          $(this).animate({ 'background-color':'gray'}, 1000);
+                                        }
+                                        );
+                                        
+                                        $('#two').click(
+                                          function() {
+                                            $(this).animate({ 'opacity':'0'});
+                                          }
+                                          );
+                                          
+                                          $('#three').click(
+                                            function() {
+                                              $(this).animate({ 'height':'250px', 'width':'250px'}, 1000);
+                                            }
+                                            );
+                                    }
+                                    );
+                                  </script>
+                                  <ul style="display:inline;list-style-type:none"> 
+                                    <li id="one" style="width:200px;height:200px;background-color:orange;float:left;margin:10px;"></li>
+                                  <li id="two"  style="width:200px;height:200px;background-color:purple;float:left;margin:10px;"></li>
+                                  <li id="three"  style="width:200px;height:200px;background-color:blue;float:left;margin:10px;"></li>
+                                  </ul>
+                              </section>
+                              
+                              <section>
+                                <h3>Lab: Using jQuery's animate()</h3>
+                                <div class="left-align">
+                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate a change to the first div's background-color when it's clicked.</p>
+                                  <p class="fragment">Add the following jQuery to the comment that says Step 1:</p>
+                                  </div>
+                              </section>
 
             <section>
               <h3>The jQuery UI Library</h3>
-                <p>jQuery UI is "a curated set of user interface interactions, effects, widgets, and themes built on top of the jQuery JavaScript Library. Whether you're building highly interactive web applications or you just need to add a date picker to a form control, jQuery UI is the perfect choice."
+                <p>jQuery UI is a set of effects, widgets, and themes built on top of the jQuery Library.
                 </p>
                 <p>
                   <a href="http://jqueryui.com/" target="_blank">http://jqueryui.com/</a>
@@ -155,6 +203,7 @@ $(document).ready(
                 <li>To use jQuery UI, you must include both a link to the JavaScript library, and a link to a CSS file.</li>
                 <li>jQuery UI has a default theme that provides the widgets we'll cover with their look and feel.</li>
                 <li>This theme is styled through a CSS file that you also include when working with jQuery UI.</li>
+                </ul>
                 <pre><code>
  &lt;link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" /&gt;
   &lt;script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"&gt;&lt;/script&gt;
