@@ -487,7 +487,14 @@ $(document).ready(
                       <img src="images/websiteforload.png">
                     </section>
                     
-                                  
+                      <section>
+                        <h3>The "Same Origin Policy"</h3>
+                        <p>Due to browser security restrictions, most AJAX requests are subject to the same origin policy</p>
+                        <p class="fragment">The <span class="green">load()</span> request can not successfully retrieve data from a different domain, subdomain, or protocol.</p>
+                        <p class="fragment">What this means in practice is that the HTML file you pass to the <span class="green">load()</span> action must live on the same domain as the file making the call to <span class="green">load()</span>.</p>
+
+                      </section>
+                                                        
                      <section>
                         <h3>jQuery's load() action</h3>
                         <div class="left-align">
