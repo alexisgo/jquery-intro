@@ -48,6 +48,8 @@
           <img src = "images/gdi_logo_badge.png" width="50%">
           <h3>Intro to jQuery</h3>
           <h4>Class 3</h4>
+          <a href="http://alexisgo.github.io/jquery-intro/" target="_blank">http://alexisgo.github.io/jquery-intro/</a>
+          
         </section>
         
         <!-- Welcome-->
@@ -65,6 +67,10 @@
           </div>
         </section>
            
+        <section>
+          <h3>Resources for Today</h3>
+          <p>The slides, and ALL code examples for today's class, can be found at <a href="http://alexisgo.github.io/jquery-intro/" target="_blank">http://alexisgo.github.io/jquery-intro/</a></p>
+        </section>   
          <!-- Review: Actions-->
           <section>
             <h3>Review: jQuery Actions</h3>
@@ -133,7 +139,7 @@ var Person = {
              
                            <!-- animate -->                  
                            <section>
-                             <h3>jQuery's animate() action</h3>
+                             <h3>jQuery's animate action</h3>
                              <pre><code>
   .animate( properties [, duration ] [, easing ] [, complete ] )
                                </code></pre>
@@ -142,15 +148,21 @@ var Person = {
                            
                            <section>
                               <h3>jQuery's animate() action</h3>
-                              <pre><code>
-   .animate( properties [, duration ] [, easing ] [, complete ] )
-                                </code></pre>
-                                <p>For example, if we wanted to ...</p>
+                                                         <pre><code>
+.animate( properties [, duration ] [, easing ] [, complete ] )
+                                                           </code></pre>
+                              
+                                <p>If we wanted to change the height of an element called box, and have that change happen over 2 seconds, we could write:</p>
+                                                           <pre><code>
+ $('.box').animate({ 'height':'200px' } , 2000);
+                                                             </code></pre>
+                                
                                 <p>Note that we specify the properties we want to animate inside of a JavaScript object</p>
+                                <p>Note also that we specify the duration of the animation in milliseconds.
                             </section>
 
                               <section>
-                                <h3>Lab: Using jQuery's animate()</h3>
+                                <h3>Lab: Using jQuery's animate</h3>
                                 <div class="left-align">
                                   <p>We're going to use jQuery's <span class="green">animate()</span> to animate CSS changes on three different <span class="code">&lt;li&gt;</span> elements</p>
                                   <p>We'll trigger each animation in response to a click on that li.</p>
@@ -191,12 +203,37 @@ var Person = {
                               </section>
                               
                               <section>
-                                <h3>Lab: Using jQuery's animate()</h3>
+                                <h3>Lab: Using jQuery's animate</h3>
                                 <div class="left-align">
-                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate a change to the first div's background-color when it's clicked.</p>
-                                  <p class="fragment">Add the following jQuery to the comment that says Step 1:</p>
+                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate a change to the first li's opacity when it's clicked.</p>
+                                  <p class="fragment">Add the following jQuery <a href="http://jsbin.com/irixaj/4/edit" target="_blank">to our code</a>, directly below the comment that says Step 1:</p>
+                                  <pre class="fragment"><code contenteditable class = "javascript">       
+ $(this).animate({ 'opacity':'0' }, 1000);
+                                  </code></pre>
                                   </div>
                               </section>
+                              
+                              <section>
+                                <h3>Lab: Using jQuery's animate</h3>
+                                <div class="left-align">
+                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate a change to the second li's border-width when it's clicked.</p>
+                                  <p class="fragment">Add the following jQuery <a href="http://jsbin.com/irixaj/4/edit" target="_blank">to our code</a>, directly below the comment that says Step 2:</p>
+                                  <pre class="fragment"><code contenteditable class = "javascript">       
+ $(this).animate({ 'border-width':'10px'});
+                                  </code></pre>
+                                  </div>
+                              </section>
+                              
+                               <section>
+                                  <h3>Lab: Using jQuery's animate</h3>
+                                  <div class="left-align">
+                                    <p>We're going to use jQuery's <span class="green">animate</span> to animate a change to the third li's width and height when it's clicked.</p>
+                                    <p class="fragment">Add the following jQuery <a href="http://jsbin.com/irixaj/4/edit" target="_blank">to our code</a>, directly below the comment that says Step 3:</p>
+                                    <pre class="fragment"><code contenteditable class = "javascript">       
+$(this).animate({ 'height':'200px', 'width':'200px'}, 2000);
+                                    </code></pre>
+                                    </div>
+                                </section>
 
             <section>
               <h3>The jQuery UI Library</h3>
@@ -246,7 +283,7 @@ var Person = {
                 </p>
                 <p>We are going to practice using three jQuery UI widgets: the <a href="http://jqueryui.com/accordion/" target="_blank">accordion</a>, the <a href="http://jqueryui.com/datepicker/" target="_blank">datepicker</a>, and the <a href="http://jqueryui.com/spinner/" target="_blank">spinner</a></p>
                 <p class="fragment">The comments provide an outline of all the steps we'll take to complete the page.</p>
-                <p class="fragment">If you get stuck at any point, feel free to refer to the solution, which is at: <a href="http://jsbin.com/esugoq/1/edit" target="_blank">http://jsbin.com/esugoq/1/edit</a>
+                <p class="fragment">If you get stuck at any point, feel free to refer to the solution, which is at: <a href="http://jsbin.com/esugoq/3/edit" target="_blank">http://jsbin.com/esugoq/3/edit</a>
                   </p>
                 </div>
             </section>
@@ -296,9 +333,21 @@ var Person = {
             </section>
             <section>
                 <h3>Lab: Adding an Accordion Menu</h3>
-                <p>...
-                </p>
+                <p>We already have the HTML elements that will make up our accordion present on <a href="http://jsbin.com/uvexax/1/edit" target="_blank">our restaurant's page</a>:</p>
+                                <pre><code>&lt;div id="menu"&gt;
+  &lt;h3&gt;Lunch&lt;/h3&gt;
+  &lt;div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Tacos&lt;/strong&gt;: Pork, Chicken or Mushroom Tacos with guacamole and salsa.&lt;/li&gt;
+  &lt;!-- etc ... --&gt;
+                                </code></pre>
+                 <p>Let's turn <span class="code">&lt;div id="menu"&gt;</span> into an Accordion by adding the following line to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>. Add this underneath the comment that says Step 0:
+                 <pre><code contenteditable class = "javascript">
+$('#menu').accordion();      
+                 </code></pre>
+                 <p>We've now added an accordion!</p>
             </section>
+
 
                         <!-- HTML forms-->
                         <section>
@@ -427,8 +476,9 @@ var Person = {
                                <pre><code contenteditable class = "javascript">
 &lt;input type="text" id="date"&gt;
                                </code></pre>
-                <p>Let's turn this <span class="code">&lt;input&gt;</span> element into a Datepicker by adding the following line to our code:
+                <p>Let's turn this <span class="code">&lt;input&gt;</span> element into a Datepicker by adding the following line <a href="http://jsbin.com/uvexax/1/edit" target="_blank">to our code</a>, after the comment that says Step 1:
                 <pre><code contenteditable class = "javascript">
+// step 1: make the #date element into a datepicker with the datepicker() action:                  
  $('#date').datepicker();               
                 </code></pre>
             </section>
@@ -468,6 +518,7 @@ var Person = {
                                  </code></pre>
                   <p>Let's turn this <span class="code">&lt;input&gt;</span> element into a Spinner by adding the following line to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>. Add this code underneath the comment that says step 2:
                   <pre><code contenteditable class = "javascript">
+//step 2: make the #guests element into a spinner with the spinner() action
  $('#guests').spinner();             
                   </code></pre>
                   <p>We've now added a spinner!</p>
@@ -478,6 +529,7 @@ var Person = {
                  <p>Let's change the line of code that adds the spinner slightly, so that we only allow values between 1 and 10 </p>
                  <p>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's update the last line we added to be this instead:</p>
                  <pre><code contenteditable class = "javascript">
+// step 3: set the min of the spinner to 1 and the max to 10 
  $('#guests').spinner(
    {
      min:1, 
@@ -486,13 +538,16 @@ var Person = {
  );          
                  </code></pre>
                  <p>This passes an object to the spinner(), which tells it to set the minimum value to 1 and the maximum value to 10.</p>
+                 <p class="fragment">If you get stuck, feel free to refer to the solution, which is at: <a href="http://jsbin.com/esugoq/3/edit" target="_blank">http://jsbin.com/esugoq/3/edit</a>
+                 
              </section>              
 
               <section>
                 <h3>Lab: Adding a Spinner</h3>
                 <p>We are going to make one last change to our spinner. We are going to set its initial value to 2.</p>
-                <p>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's add the following line of code</p>
+                <p>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's add the following line of code right after the comment that says Step 4:</p>
                 <pre><code contenteditable class = "javascript">
+// step 4: set the starting value of the spinner to 2                  
 $('#guests').spinner("value", 2); 
                 </code></pre>
                 <p>This will set the starting value of the spinner to 2.</p>
@@ -500,7 +555,7 @@ $('#guests').spinner("value", 2);
             
             <section>
               <h3>The Spinner Number Picker in jQuery UI</h3>
-              <p>Here is the complete code we should have added to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">example</a></p>
+              <p>Here is the complete code we should have added to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">example</a> to set up our Spinner()</p>
               <pre><code contenteditable class = "javascript">
   // min # guests is 1, max is 10
   $('#guests').spinner(
@@ -514,17 +569,7 @@ $('#guests').spinner("value", 2);
   $('#guests').spinner("value", 2);
               </code></pre>
             </section>
-            <!-- jQuery UI Themes -->
-             <section>
-               <h3>jQuery UI and Themes</h3>
-               <div class="left-align">
-                 <img src="images/jquery-themes.png" style="float:right;">
-               <p>We have been using jQuery UI's custom theme. "Smoothness." But there are many other themes to choose from.</p>
-               <p>You can explore the other available themes, which will change the look and feel of the widgets, at <a href="http://jqueryui.com/themeroller/" target="_blank">http://jqueryui.com/themeroller/</a></p>
-               <p>You can also design your own theme at jQuery UI's theme roller site: </p>
-               </div>
-             </section>
-          
+        
 
                <section>
                   <h3>Lab: Using Form Values</h3>
@@ -545,7 +590,11 @@ $('form').submit(
               </section>
               
               <section>
-                </section>
+                <h3>Lab: Using Form Values</h3>
+                <p>Here is the result of adding that alert:</p>
+                <img src="images/tyalert.png">
+              </section>
+                
               <!-- jQuery UI Themes -->
                <section>
                  <h3>jQuery UI and Themes</h3>
