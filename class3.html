@@ -110,26 +110,24 @@ $(document).ready(
 );
               </code></pre>
             </div>
-              
-              </div>
+            </div>
+          </section>
+          
+            <!-- Objects-->
+            <section>
+              <h3>Review: Objects</h3>
+              <p>Objects are a JavaScript data type that let us store a collection of properties and methods.</p>
+              <p>The simplest object is just the empty curly braces {}<p>
+                <p>In more typical objects, the curly braces {} will contain one or more property/value pairs, separated by commas.</p>
+                                  <pre><code contenteditable class = "javascript">
+var Person = { 
+name: "Susanne",
+age: 32
+};
+                </pre></code>
+
             </section>
-            <!--
 
-            leftover from class 2:
-            animate() 
-            
-            
-            - The jQuery UI Library
-            -- Accordion Menus
-            -- Datepicker
-            -- Progressbars
-
-            - What is AJAX?
-            -- Using AJAX for single-page applications
-
-            - Additional topics as time permits!
-
-             -->
              
                            <!-- animate -->                  
                            <section>
@@ -137,30 +135,41 @@ $(document).ready(
                              <pre><code>
   .animate( properties [, duration ] [, easing ] [, complete ] )
                                </code></pre>
-                               <p>With jQuery's <span class="green">animate()</span> action, we can make changes to CSS properties occur over a period of time, instead of instantly, thus animating their changes.</p>
+                               <p>With jQuery's <span class="green">animate()</span> action, we can make changes to CSS properties occur <em>over a period of time</em>, instead of instantly, thus animating their changes.</p>
                            </section>
+                           
+                           <section>
+                              <h3>jQuery's animate() action</h3>
+                              <pre><code>
+   .animate( properties [, duration ] [, easing ] [, complete ] )
+                                </code></pre>
+                                <p>For example, if we wanted to ...</p>
+                                <p>Note that we specify the properties we want to animate inside of a JavaScript object</p>
+                            </section>
 
                               <section>
                                 <h3>Lab: Using jQuery's animate()</h3>
                                 <div class="left-align">
-                                  <p>We're going to use jQuery's <span class="green">animate</span> to animate CSS changes on three different li elements</p>
+                                  <p>We're going to use jQuery's <span class="green">animate()</span> to animate CSS changes on three different <span class="code">&lt;li&gt;</span> elements</p>
                                   <p>We'll trigger each animation in response to a click on that li.</p>
-                                  <p>Please open up the lab code at: <a href="http://jsbin.com/irixaj/4/edit" target="_blank">http://jsbin.com/irixaj/4/edit</a></p>
-                                  <p>The solution lab (if you get stuck) is available at: <a href="http://jsbin.com/irixaj/2/edit" target="_blank">http://jsbin.com/irixaj/2/edit</a>
-                                  <p>You can try out the results of what we'll be building be clicking on the below three li elements:</p>
+                                  <ul>
+                                    <li>Please open up the lab code at: <a href="http://jsbin.com/irixaj/4/edit" target="_blank">http://jsbin.com/irixaj/4/edit</a></li>
+                                    <li>The solution lab (if you get stuck) is available at: <a href="http://jsbin.com/irixaj/2/edit" target="_blank">http://jsbin.com/irixaj/2/edit</a></li>
+                                  </ul>
+                                  <p>Try clicking on the below 3 elements:</p>
                                   
                                   <script>
                                   $(document).ready(
                                     function() {
                                       $('#one').click(
                                         function() {
-                                          $(this).animate({ 'background-color':'gray'}, 1000);
+                                          $(this).animate({ 'opacity':'0'}, 1000);
                                         }
                                         );
                                         
                                         $('#two').click(
                                           function() {
-                                            $(this).animate({ 'opacity':'0'});
+                                            $(this).animate({ 'border-width':'10px'});
                                           }
                                           );
                                           
@@ -174,7 +183,7 @@ $(document).ready(
                                   </script>
                                   <ul style="display:inline;list-style-type:none"> 
                                     <li id="one" style="width:200px;height:200px;background-color:orange;float:left;margin:10px;"></li>
-                                  <li id="two"  style="width:200px;height:200px;background-color:purple;float:left;margin:10px;"></li>
+                                  <li id="two"  style="width:200px;height:200px;background-color:purple;float:left;margin:10px;border:0 solid black;"></li>
                                   <li id="three"  style="width:200px;height:200px;background-color:blue;float:left;margin:10px;"></li>
                                   </ul>
                               </section>
@@ -507,11 +516,21 @@ $(document).ready(
          }
       );
                           </code></pre>
-                          <p>
-                            This external file (sidebar.html) should not contain &lt;html&gt; or &lt;body&gt;, just the HTML that creates the sidebar.</p>
                           <p>The advantage of this approach is that (1) it saves you time and (2) when you need to make changes to the sidebar, you just change that one sidebar.html file!</p>
                         </div>
                       </section>                  
+
+                        <section>
+                            <h3>jQuery's load() action</h3>
+                            <div class="left-align">
+                            <p>If we only want to grab one section of the HTML page we are trying to load, we can specify the name of the element in the string we pass to <span class="green">load()</span></p>
+                            <p>Then, the <span class="green">load()</span> action will grab that element (and everything contained in it) and ignore the rest of the HTML page.
+                            </p>
+                            <pre><code>
+  $(".sidebar").load('sidebar.html <span class="orange">#grabThisElement');
+                              </code></pre>
+                            </div>
+                          </section>                      
                       
                       <section>
                         <h3>jQuery's load() action visualized</h3>
