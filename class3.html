@@ -116,13 +116,15 @@ $(document).ready(
             <!-- Objects-->
             <section>
               <h3>Review: Objects</h3>
-              <p>Objects are a JavaScript data type that let us store a collection of properties and methods.</p>
-              <p>The simplest object is just the empty curly braces {}<p>
-                <p>In more typical objects, the curly braces {} will contain one or more property/value pairs, separated by commas.</p>
+              <ul>
+              <li>Objects are a JavaScript data type that let us store a collection of properties and functions.</li>
+              <li>The simplest object is just the empty curly braces <span class="code">{}</span></li>
+              <li>In more typical objects, the curly braces <span class="code">{}</span> will contain one or more property/value pairs, separated by commas.</li>
+              </ul>
                                   <pre><code contenteditable class = "javascript">
 var Person = { 
-name: "Susanne",
-age: 32
+  name: "Susanne",
+  age: 32
 };
                 </pre></code>
 
@@ -203,23 +205,40 @@ age: 32
                 <p>
                   <a href="http://jqueryui.com/" target="_blank">http://jqueryui.com/</a>
                 </p>
+                <img src="images/jquery-ui.png" style="float:left;" width="300">
+
                 <p>The best place to see jQuery UI in action is the demo site: <a href="http://jqueryui.com/demos/" target="_blank">http://jqueryui.com/demos/</a></p>
             </section>
-            
+
             <section>
               <h3>Using jQuery UI</h3>
+              <p>
+                To use jQuery UI, you must include:
+                <ol>
+                  <li>A link to the jQuery UI JavaScript library</li>
+                  <li>A link to the default jQuery UI theme, which lives in a CSS file.</li>
+                </ol>
+      
+            </section>
+            <section>
+              <h3>Including jQuery UI</h3>
               <ul>
-                <li>To use jQuery UI, you must include both a link to the JavaScript library, and a link to a CSS file.</li>
+                <li>First, we include a link to the jQuery UI JavaScript library:</li>
+              </ul>
+                               <pre><code>
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+                               </pre></code>
+                <ul>
                 <li>jQuery UI has a default theme that provides the widgets we'll cover with their look and feel.</li>
-                <li>This theme is styled through a CSS file that you also include when working with jQuery UI.</li>
+                <li>This theme is styled through a CSS file that you <em>also</em> include when working with jQuery UI.</li>
                 </ul>
                 <pre><code>
  &lt;link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" /&gt;
-  &lt;script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"&gt;&lt;/script&gt;
-
                 </pre></code>
             </section>
          
+
             <section>
               <h3>jQuery UI: In-Class Lab</h3>
               <div class="left-align">
@@ -281,9 +300,108 @@ age: 32
                 </p>
             </section>
 
+                        <!-- HTML forms-->
+                        <section>
+                          <h3>HTML forms</h3>
+                          <p>The next two jQuery UI widgets we'll talk about, <span class="green">Datepicker</span> and <span class="green">Spinner</span> both work with <span class="code">&lt;form&gt;</span> elements. So let's talk about forms briefly</p>
+                          <p>HTML Forms allow users to enter information</p>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "html">
+  &lt;form id="about-me">
+    &lt;input type="text" id="name" placeholder="Enter a name"/>
+    &lt;label>Do you like popcorn&lt;/label>
+    Yes &lt;input type="radio" name="popcorn" val="yes"/>
+    No &lt;input type="radio" name="popcorn" val="no"/>
+    &lt;input type="submit" value="Go!" style="padding: 7px; font-size:1em"/>
+  &lt;/form>
+                            </code></pre>
+                          </div>
+                        </section>
+
+                        <section>
+                          <h3>HTML forms</h3>
+                          <p>HTML Forms allow users to enter information</p>
+                          <p>HTML Forms are made up of a parent <span class="code">&lt;form&gt;</span> element, and then one or more inner <span class="code">&lt;input&gt;</span> elements that define the form's fields.</p>
+                          <div class = "fragment left-align">
+                <form>
+                  <input type = "text" id = "name" placeholder = "Enter a name" style = "width:300px; padding: 7px; font-size:1em"/><br/>
+                  <label>Do you like popcorn</label><br/>
+                  Yes <input type = "radio" name = "popcorn" val = "yes" style ="font-size:1em"/>
+                  No <input type = "radio" name = "popcorn" val = "no" style ="font-size:1em"/><br/>
+                  <label>Favorite Dinosaur</label><br/>
+                  <select id = "dinosaur" style = "padding: 7px; font-size:1em">
+                    <option>Tyrannosaurus Rex</option>
+                    <option>Triceratops</option>
+                    <option>Stegosaurus</option>
+                    <option>Other</option>
+                  </select><br/>
+                  <input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
+                </form>
+                          </div>
+                        </section>
+
+                        <!-- JavaScript and HTML Forms-->
+                        <section>
+                          <h3>Values from Forms</h3>
+                          <p>You can use jQuery to get values from a form</p>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+    $('#name').val();
+    $('select#dinosaur').val();
+    $('input:radio[name=popcorn]:checked').val();
+                            </code></pre>
+                          </div>
+                          <div class = "fragment">
+                            Or set values of a form
+                            <pre><code contenteditable class = "javascript">
+    $('#name').val('Mitch');
+    $('select#dinosaur').val('stego');
+    $('input:radio[name=popcorn]:checked').val('no');
+                            </code></pre>
+                          </div>
+                        </section>
+
+                        <section>
+                          <h3>Values from Forms</h3>
+                          <p>jQuery has an event for form submission</p>
+                          <p class="fragment">This allows us to run code once the <strong>Submit</strong> button has been pressed.</p>
+                          <div class = "fragment">
+                            <pre><code contenteditable class = "javascript">
+  $('#about-me').submit(function(event){
+        //code to execute after submission
+        return false;
+    });
+                            </code></pre>
+                            <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
+                          </div>
+                        </section>
+
+                          <section>
+                            <h3>Form Submission Event</h3>
+                            <p>We listened for the submit event in the lolcat generator we reviewed last class: <a href="http://jsbin.com/igulej/4/edit" target="_blank">http://jsbin.com/igulej/4/edit</a></p>
+                            <div class = "fragment">
+                              <pre><code contenteditable class = "javascript">
+  $("form").submit(uploadAndCaption);
+
+  function uploadAndCaption(){
+    var text = $("#enterText").val();
+    var photo = $("#enterPhoto").val();
+
+   // append a new img with the provided URL inside a li element
+    $("#photoList").append("&lt;li&gt;&lt;img src='" + photo + "' &gt;&lt;/li&gt;");
+    return false;
+  }
+                              </code></pre>
+                              <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
+                            </div>
+                          </section>
+                  <section>
+                    <h3>The Datepicker in jQuery UI</h3>
+                    <p>Now let's head back to jQuery UI, and see how we can transform a form's <span class="code">&lt;input&gt;</span> element into a Datepicker!</p>
+                  </section>        
             <section>
                 <h3>The Datepicker in jQuery UI</h3>
-                <p>We can transform a regular &lt;input&gt; element into a dynamic date picker with the jQuery UI <span class="green">datepicker()</span> action.
+                <p>We can transform a regular <span class="code">&lt;input&gt;</span> element into a dynamic date picker with the jQuery UI <span class="green">datepicker()</span> action.
                 </p>
                 <script>
                 $(document).ready(
@@ -305,17 +423,84 @@ age: 32
 
             <section>
                 <h3>Lab: Adding a Datepicker</h3>
-                <p>We already have an &lt;input&gt; element (with its id set to date) on our restaurant's page:</p>
+                <p>We already have an <span class="code">&lt;input&gt;</span> element (with its id set to date) on our restaurant's page:</p>
                                <pre><code contenteditable class = "javascript">
 &lt;input type="text" id="date"&gt;
                                </code></pre>
-                <p>Let's turn this &lt;input&gt; element into a Datepicker by adding the following line to our code:
+                <p>Let's turn this <span class="code">&lt;input&gt;</span> element into a Datepicker by adding the following line to our code:
                 <pre><code contenteditable class = "javascript">
  $('#date').datepicker();               
                 </code></pre>
             </section>
+            
+            <!-- spinner() -->
+            
+             <section>
+                  <h3>The Spinner in jQuery UI</h3>
+                  <p>A spinner is jQuery UI's widget to allow a user to choose from a set of numbers.</p>
+                  <p>We can transform a regular <span class="code">&lt;input&gt;</span> element into a dynamic number chooser (called a <span class="green">spinner()</span>) with jQuery UI.
+                  </p>
+                  <script>
+                  $(document).ready(
+                    function() {
+                      $('#spinner').spinner();
+                    }
+                    );
+                  </script>
+                 <pre><code contenteditable class = "javascript">
+    $('#spinner').spinner();               
+                 </code></pre>
+
+                  <p>Try clicking the up/down arrows to try out the jQuery UI Spinner:</p>
+                  <form>
+                    <label>Pick a Number: </label>
+                    <input type="text" id="spinner">
+                  </form>
+              </section>
+              
+
+            <!-- spinner() lab -->
+             <section>
+                  <h3>Lab: Adding a Spinner</h3>
+                  <p>We already have an <span class="code">&lt;input&gt;</span> element (with its id set to guests) on <a href="http://jsbin.com/uvexax/1/edit" target="_blank">our restaurant's page</a>:</p>
+                                 <pre><code contenteditable class = "javascript">
+  &lt;input type="text" id="guests"&gt;
+                                 </code></pre>
+                  <p>Let's turn this <span class="code">&lt;input&gt;</span> element into a Spinner by adding the following line to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>. Add this code underneath the comment that says step 2:
+                  <pre><code contenteditable class = "javascript">
+ $('#guests').spinner();             
+                  </code></pre>
+                  <p>We've now added a spinner!</p>
+              </section>
+              
+               <section>
+                 <h3>Lab: Adding a Spinner</h3>
+                 <p>Let's change the line of code that adds the spinner slightly, so that we only allow values between 1 and 10 </p>
+                 <p>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's update the last line we added to be this instead:</p>
+                 <pre><code contenteditable class = "javascript">
+ $('#guests').spinner(
+   {
+     min:1, 
+     max:10 // min # guests is 1, max is 10
+   }
+ );          
+                 </code></pre>
+                 <p>This passes an object to the spinner(), which tells it to set the minimum value to 1 and the maximum value to 10.</p>
+             </section>              
+
+              <section>
+                <h3>Lab: Adding a Spinner</h3>
+                <p>We are going to make one last change to our spinner. We are going to set its initial value to 2.</p>
+                <p>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's add the following line of code</p>
+                <pre><code contenteditable class = "javascript">
+$('#guests').spinner("value", 2); 
+                </code></pre>
+                <p>This will set the starting value of the spinner to 2.</p>
+            </section>
+            
             <section>
               <h3>The Spinner Number Picker in jQuery UI</h3>
+              <p>Here is the complete code we should have added to our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">example</a></p>
               <pre><code contenteditable class = "javascript">
   // min # guests is 1, max is 10
   $('#guests').spinner(
@@ -329,113 +514,48 @@ age: 32
   $('#guests').spinner("value", 2);
               </code></pre>
             </section>
-
-            <section>
-                <h3>Progressbars in jQuery UI</h3>
-                <p>...
-                </p>
-            </section>
-
+            <!-- jQuery UI Themes -->
+             <section>
+               <h3>jQuery UI and Themes</h3>
+               <div class="left-align">
+                 <img src="images/jquery-themes.png" style="float:right;">
+               <p>We have been using jQuery UI's custom theme. "Smoothness." But there are many other themes to choose from.</p>
+               <p>You can explore the other available themes, which will change the look and feel of the widgets, at <a href="http://jqueryui.com/themeroller/" target="_blank">http://jqueryui.com/themeroller/</a></p>
+               <p>You can also design your own theme at jQuery UI's theme roller site: </p>
+               </div>
+             </section>
           
-              <!-- HTML forms-->
-              <section>
-                <h3>HTML forms</h3>
-                <p>HTML Forms allow users to enter information</p>
-                <div class = "fragment">
-                  <pre><code contenteditable class = "html">
-      &lt;form id ="about-me">
-        &lt;input type = "text" id = "name" placeholder = "Enter a name"/>
-        &lt;label>Do you like popcorn&lt;/label>
-        Yes &lt;input type = "radio" name = "popcorn" val = "yes"/>
-        No &lt;input type = "radio" name = "popcorn" val = "no"/>
-        &lt;label>Favorite Dinosaur&lt;/label>
-        &lt;select id = "dinosaur">
-          &lt;option value = "t-rex">Tyrannosaurus Rex&lt;/option>
-          &lt;option value = "tri">Triceratops&lt;/option>
-          &lt;option value = "stego">Stegosaurus&lt;/option>
-          &lt;option value = "other">Other&lt;/option>
-        &lt;/select>
-        &lt;input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
-      &lt;/form>
-                  </code></pre>
-                </div>
-              </section>
 
-              <section>
-                <h3>HTML forms</h3>
-                <p>HTML Forms allow users to enter information</p>
-                <div class = "fragment left-align">
-      <form>
-        <input type = "text" id = "name" placeholder = "Enter a name" style = "width:300px; padding: 7px; font-size:1em"/><br/>
-        <label>Do you like popcorn</label><br/>
-        Yes <input type = "radio" name = "popcorn" val = "yes" style ="font-size:1em"/>
-        No <input type = "radio" name = "popcorn" val = "no" style ="font-size:1em"/><br/>
-        <label>Favorite Dinosaur</label><br/>
-        <select id = "dinosaur" style = "padding: 7px; font-size:1em">
-          <option>Tyrannosaurus Rex</option>
-          <option>Triceratops</option>
-          <option>Stegosaurus</option>
-          <option>Other</option>
-        </select><br/>
-        <input type = "submit" value = "Go!" style = "padding: 7px; font-size:1em"/>
-      </form>
-                </div>
-              </section>
-
-              <!-- JavaScript and HTML Forms-->
-              <section>
-                <h3>Values from Forms</h3>
-                <p>You can use jQuery to get values from a form</p>
-                <div class = "fragment">
+               <section>
+                  <h3>Lab: Using Form Values</h3>
+                  <ul>
+                  <li>As the last exercise, we will listen to the <span class="green">submit</span> event on our form.</li>
+                  <li>When the user clicks Submit, let's display an alert saying thank you.</li>
+                  <li>In that alert, we'll print out how many guests have reserved a table</li>
+                  <li>In our <a href="http://jsbin.com/uvexax/1/edit" target="_blank">code</a>, let's add the following lines (after the comment that says Step 5):</li>
+                  </ul>
                   <pre><code contenteditable class = "javascript">
-          $('#name').val();
-          $('select#dinosaur').val();
-          $('input:radio[name=popcorn]:checked').val();
-                  </code></pre>
-                </div>
-                <div class = "fragment">
-                  Or set values of a form
-                  <pre><code contenteditable class = "javascript">
-          $('#name').val('Mitch');
-          $('select#dinosaur').val('stego');
-          $('input:radio[name=popcorn]:checked').val('no');
-                  </code></pre>
-                </div>
-              </section>
-
-              <section>
-                <h3>Values from Forms</h3>
-                <p>jQuery has an event for form submission</p>
-                <div class = "fragment">
-                  <pre><code contenteditable class = "javascript">
-            $('#about-me').submit(function(event){
-                  //code to execute after submission
-                  return false;
-              });
-                  </code></pre>
-                  <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
-                </div>
-              </section>
-              
-                <section>
-                  <h3>Form Submission Event</h3>
-                  <p>We listened for the submit event in the lolcat generator: <a href="http://jsbin.com/igulej/4/edit" target="_blank">http://jsbin.com/igulej/4/edit</a></p>
-                  <div class = "fragment">
-                    <pre><code contenteditable class = "javascript">
-  $("form").submit(uploadAndCaption);
-  
-  function uploadAndCaption(){
-    var text = $("#enterText").val();
-    var photo = $("#enterPhoto").val();
-
-   // append a new img with the provided URL inside a li element
-    $("#photoList").append("&lt;li&gt;&lt;img src='" + photo + "' &gt;&lt;/li&gt;");
+$('form').submit(
+  function() {
+    alert("Thank you for reserving a table for " + $('#guests').val() + " guests");
     return false;
   }
-                    </code></pre>
-                    <span class = "yellow">"return false"</span> to prevent the form trying to submit to a server.
-                  </div>
-                </section>   
+);
+                  </code></pre>
+              </section>
+              
+              <section>
+                </section>
+              <!-- jQuery UI Themes -->
+               <section>
+                 <h3>jQuery UI and Themes</h3>
+                 <div class="left-align">
+                   <img src="images/jquery-themes.png" style="float:right;">
+                 <p>We have been using jQuery UI's custom theme. "Smoothness." But there are many other themes to choose from.</p>
+                 <p>You can explore the other available themes, which will change the look and feel of the widgets, at <a href="http://jqueryui.com/themeroller/" target="_blank">http://jqueryui.com/themeroller/</a></p>
+                 <p>You can also design your own theme at jQuery UI's theme roller site: </p>
+                 </div>
+               </section>
                 
                  <!-- What is AJAX-->
                   <section>
@@ -462,7 +582,7 @@ age: 32
                     <h3>jQuery's load() action</h3>
                     <div class="left-align">
                     <p>jQuery provides a main ajax() action to perform AJAX requests, but it also has shorthand methods to perform more common kinds of AJAX requests with less code.</p>
-                    <p>One of those methods is <a href="http://api.jquery.com/load/" target="_blank">load()</a>, and we will use it to build a simple single-page application.
+                    <p>One of those methods is <a href="http://api.jquery.com/load/" target="_blank">load()</a>, and we can use it to inject HTML from one file into another, to save us time.
                     </p>
                     <pre><code>
   $(document).ready(
@@ -493,9 +613,19 @@ age: 32
                     
                     <section>
                       <h3>jQuery's load() action visualized</h3>
+                      <img src="images/jqueryload.png">
+                    </section>
+                    
+                    <section>
+                      <h3>jQuery's load() action visualized</h3>
                       <img src="images/websiteforload.png">
                     </section>
                     
+                    <section>
+                      <h3>Using load() to inject a sidebar</h3>
+                      <p>An example using the load() action to inject a sidebar is up at <a href="http://alexisgo.com/GDI/jquery-load-example/index.html" target="_blank">http://alexisgo.com/GDI/jquery-load-example/</a></p>
+                      <p>We can look at the code that drives this example at: <a href="https://c9.io/alexisgo_1/jquery-load-example" target="_blank">https://c9.io/alexisgo_1/jquery-load-example</a></p>
+                    </section>
                       <section>
                         <h3>The "Same Origin Policy"</h3>
                         <p>Due to browser security restrictions, most AJAX requests are subject to the same origin policy</p>
@@ -531,11 +661,16 @@ age: 32
                               </code></pre>
                             </div>
                           </section>                      
+
+<!--
+                            <section>
+                                <h3>jQuery's load() and file paths </h3>
+                                <div class="left-align">
+                                <p>One thing that's important when using jQuery's <span class="green">load()</span> is understanding where the code will execute.</p>
+                                <p>Whichever file that the <span class="green">load()</span> code will execute in is the place you need to use as the starting point for your file paths.
+                              </section>                      
+                      -->
                       
-                      <section>
-                        <h3>jQuery's load() action visualized</h3>
-                        <img src="images/jqueryload.png">
-                      </section>
                       
                         <section>
                           <h3>jQuery Ajax</h3>
